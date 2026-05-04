@@ -1,0 +1,4875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="redesign.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="fixes.css">
+
+  <link rel="icon" href="imgae/01.jpg" type="image/icon">
+
+
+
+
+
+
+  <title>OCTA PORTFOLIO — JVOR DEV</title>
+  <!-- PWA / Offline support -->
+  <meta name="theme-color" content="#ea580c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+
+<body>
+
+  <!-- ===== PAGE LOADING SCREEN ===== -->
+  <div id="page-loader">
+    <div class="loader-inner">
+      <div class="loader-logo">JVOR <span>DEV.</span></div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-text">Loading portfolio...</div>
+    </div>
+  </div>
+  <style>
+    #page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: #080808;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #page-loader.loader-done {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-inner {
+      text-align: center;
+    }
+
+    .loader-logo {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 2px;
+      font-family: 'Poppins', sans-serif;
+      animation: loaderPulse 1.5s ease-in-out infinite;
+    }
+
+    .loader-logo span {
+      color: #ea580c;
+    }
+
+    .loader-bar-wrap {
+      width: 200px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      margin: 24px auto 16px;
+      overflow: hidden;
+    }
+
+    .loader-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ea580c, #ff9f1c);
+      border-radius: 2px;
+      animation: loaderFill 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      box-shadow: 0 0 10px rgba(234, 88, 12, 0.6);
+    }
+
+    .loader-text {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.3rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes loaderPulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes loaderFill {
+      0% {
+        width: 0%;
+      }
+
+      70% {
+        width: 85%;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+
+
+  <!-- ===== SCROLL PROGRESS BAR ===== -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- ===== FLOATING HIRE ME BUTTON ===== -->
+  <a href="#contact" id="floating-hire" title="Hire Me">
+    <i class='bx bx-briefcase'></i>
+    <span>Hire Me</span>
+  </a>
+
+
+
+
+
+
+  <header class="header">
+    <a href="#home" class="logo">JVOR <span>DEV.</span></a>
+
+
+
+    <nav class="navbar">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#certificates">CERTIFICATES</a>
+      <a href="#tech-skills">SKILLS</a>
+      <a href="#services">SERVICES</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#creative-samples">CREATIVES</a>
+      <a href="#testimonials">TESTIMONIALS</a>
+
+    </nav>
+
+
+    <div class="theme-toggle">
+      <i class='bx bx-moon' id="theme-icon"></i>
+    </div>
+
+    <a href="#contact" class="gradient-btn">Contact Me</a>
+
+
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+  </header>
+
+
+
+
+
+
+
+  <section class="home" id="home">
+    <canvas id="codeRainCanvas"></canvas>
+
+
+
+    <div class="home-content">
+      <h1 class="home-title">Hi, I’m <span>OCTA</span></h1>
+
+
+
+
+      <h3>
+        I'm a <span id="changing-text"></span>
+      </h3>
+
+
+      <p class="intro-text">
+        Elevating brands through strategic web development and high-performance design.
+      </p>
+      <h2 class="tagline">
+        Where engineering excellence meets intuitive user experiences.
+      </h2>
+
+
+
+
+      <div class="social-icons">
+        <a href="https://github.com/JVOR3">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a href="https://www.instagram.com/jvor3?igsh=MXRpaDZ0ZnlnMWhweA==">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/jay.a.octa.2025">
+          <i class="bx bxl-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="bx bxl-twitter"></i>
+        </a>
+      </div>
+
+
+
+      <div class="btn-group">
+        <button class="btn btn-hire-modal" id="openHireModal">
+          <i class='bx bx-briefcase'></i> Hire Me
+          <span class="hire-avail-dot"></span>
+        </button>
+        <a href="#contact" class="btn">Contact</a>
+        <a href="project-folder/OCTA_Resume_Final.pdf" download class="btn btn-download">
+          Download CV <i class='bx bxs-file-pdf'></i>
+        </a>
+      </div>
+
+    </div>
+
+
+
+    <div class="home-img">
+      <div class="orbit-container" id="orbitContainer">
+        <div class="orbit-track"></div>
+        <img src="imgae/pormalko.jpg" alt="Profile Photo" class="profile-img">
+        <div class="orbit-icons" id="orbitRing">
+          <i class='bx bxl-html5' title="HTML5"></i>
+          <i class='bx bxl-css3' title="CSS3"></i>
+          <i class='bx bxl-javascript' title="JavaScript"></i>
+          <i class='bx bxl-react' title="React"></i>
+          <i class='bx bxl-nodejs' title="Node.js"></i>
+          <i class='bx bxl-python' title="Python"></i>
+          <i class='bx bxl-git' title="Git"></i>
+          <i class='bx bxl-github' title="GitHub"></i>
+        </div>
+      </div>
+      <div class="home-float-stats">
+        <div class="home-stat-pill">
+          <i class='bx bx-code-alt'></i>
+          <div><strong>5+</strong><span>Projects</span></div>
+        </div>
+        <div class="home-stat-pill">
+          <i class='bx bx-smile'></i>
+          <div><strong>3+</strong><span>Clients</span></div>
+        </div>
+        <div class="home-stat-pill">
+          <i class='bx bx-star'></i>
+          <div><strong>5★</strong><span>Rating</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-mouse"></div>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="about-resume" id="about">
+
+    <!-- Premium animated mesh background -->
+    <div class="about-mesh-bg">
+      <div class="mesh-circle mesh-c1"></div>
+      <div class="mesh-circle mesh-c2"></div>
+      <div class="mesh-circle mesh-c3"></div>
+      <div class="mesh-grid-lines"></div>
+    </div>
+
+    <!-- Section Label -->
+    <div class="about-section-label">
+      <span class="label-dot"></span>
+      <span class="label-text">ABOUT ME</span>
+      <span class="label-dot"></span>
+    </div>
+    <h2 class="section-heading">The Person <span>Behind the Code</span></h2>
+    <p class="about-section-sub">Passionate developer. Creative thinker. Detail-obsessed builder.</p>
+
+    <div class="resume-container">
+
+      <!-- ══════════ PREMIUM HERO IDENTITY BLOCK ══════════ -->
+      <div class="about-identity-block">
+
+        <!-- LEFT — Photo + Status -->
+        <div class="aib-photo-col">
+          <div class="aib-photo-frame">
+            <div class="aib-photo-border-spin"></div>
+            <div class="aib-photo-inner">
+              <img src="imgae/02.jpg" alt="Jay Octa" class="aib-photo">
+            </div>
+            <!-- Status pill -->
+            <div class="aib-status-pill">
+              <span class="aib-status-dot"></span>
+              <span>Open to Work</span>
+            </div>
+            <!-- Floating skill tags around photo -->
+            <div class="aib-float-tag aib-ft-1"><i class='bx bxl-html5'></i> HTML5</div>
+            <div class="aib-float-tag aib-ft-2"><i class='bx bxl-css3'></i> CSS3</div>
+            <div class="aib-float-tag aib-ft-3"><i class='bx bxl-javascript'></i> JS</div>
+            <div class="aib-float-tag aib-ft-4"><i class='bx bxl-react'></i> React</div>
+          </div>
+        </div>
+
+        <!-- RIGHT — Bio Text -->
+        <div class="aib-text-col">
+          <p class="aib-greeting">Hello, World! 👋</p>
+          <h3 class="aib-name">JOSE JR. <em>VILLALON OCTA</em></h3>
+
+          <div class="aib-role-row">
+            <span class="aib-role-badge">Full Stack Developer</span>
+            <span class="aib-role-sep">&</span>
+            <span class="aib-role-badge aib-role-badge--alt">UI/UX Designer</span>
+          </div>
+
+          <p class="aib-bio">
+            I'm a <strong>passionate web developer</strong> from <span class="aib-highlight">Capalonga, Camarines Norte,
+              Philippines</span> who builds fast, beautiful, and user-centric digital experiences. From pixel-perfect
+            layouts to scalable backend logic, I craft every line of code with intention and craft.
+          </p>
+          <p class="aib-bio" style="margin-top:1.5rem">
+            Currently pursuing <strong>BS Information Technology</strong> at ACLC College of Daet while freelancing and
+            growing as a developer every single day.
+          </p>
+
+          <!-- Quick stat strip -->
+          <div class="aib-stat-strip">
+            <div class="aib-stat">
+              <span class="aib-stat-n animated-counter" data-target="1" data-suffix="+">0</span>
+              <span class="aib-stat-l">Year Exp.</span>
+            </div>
+            <div class="aib-stat-div"></div>
+            <div class="aib-stat">
+              <span class="aib-stat-n animated-counter" data-target="5" data-suffix="+">0</span>
+              <span class="aib-stat-l">Projects</span>
+            </div>
+            <div class="aib-stat-div"></div>
+            <div class="aib-stat">
+              <span class="aib-stat-n animated-counter" data-target="3" data-suffix="+">0</span>
+              <span class="aib-stat-l">Clients</span>
+            </div>
+            <div class="aib-stat-div"></div>
+            <div class="aib-stat">
+              <span class="aib-stat-n animated-counter" data-target="525" data-suffix="h">0</span>
+              <span class="aib-stat-l">OJT</span>
+            </div>
+          </div>
+
+          <!-- Info grid -->
+          <div class="aib-info-grid">
+            <div class="aib-info-item">
+              <i class='bx bx-map-pin'></i>
+              <div>
+                <span class="aib-info-label">Location</span>
+                <span class="aib-info-val">Capalonga, Camarines Norte</span>
+              </div>
+            </div>
+            <div class="aib-info-item">
+              <i class='bx bx-graduation'></i>
+              <div>
+                <span class="aib-info-label">Education</span>
+                <span class="aib-info-val">BS Information Technology</span>
+              </div>
+            </div>
+            <div class="aib-info-item">
+              <i class='bx bx-briefcase-alt-2'></i>
+              <div>
+                <span class="aib-info-label">Availability</span>
+                <span class="aib-info-val">Freelance / Remote</span>
+              </div>
+            </div>
+            <div class="aib-info-item">
+              <i class='bx bx-envelope'></i>
+              <div>
+                <span class="aib-info-label">Response</span>
+                <span class="aib-info-val">Within 24 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="aib-actions">
+            <a href="project-folder/OCTA_Resume_Final.pdf" download class="aib-btn aib-btn--primary">
+              <i class='bx bxs-download'></i>
+              <span>Download CV</span>
+            </a>
+            <a href="#contact" class="aib-btn aib-btn--ghost">
+              <i class='bx bx-send'></i>
+              <span>Hire Me</span>
+            </a>
+            <a href="https://github.com/JVOR3" target="_blank" class="aib-btn aib-btn--icon">
+              <i class='bx bxl-github'></i>
+            </a>
+            <a href="https://www.facebook.com/jay.a.octa.2025" target="_blank" class="aib-btn aib-btn--icon">
+              <i class='bx bxl-facebook'></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ WHAT I DO CARDS (3-column) ══════════ -->
+      <div class="about-wid-section">
+        <div class="about-wid-header">
+          <span class="wid-label">WHAT I DO</span>
+          <h3 class="wid-title">My <span>Expertise</span></h3>
+        </div>
+        <div class="about-wid-grid">
+          <div class="wid-card wid-card--1">
+            <div class="wid-card-icon"><i class='bx bx-code-alt'></i></div>
+            <div class="wid-card-num">01</div>
+            <h4>Web Development</h4>
+            <p>Building fast, responsive, and scalable web apps using modern frameworks like React, Node.js, and more.
+            </p>
+            <div class="wid-card-tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+            <div class="wid-card-line"></div>
+          </div>
+          <div class="wid-card wid-card--2">
+            <div class="wid-card-icon"><i class='bx bx-palette'></i></div>
+            <div class="wid-card-num">02</div>
+            <h4>UI/UX Design</h4>
+            <p>Designing clean, intuitive, and visually stunning interfaces that users love to interact with.</p>
+            <div class="wid-card-tags">
+              <span>Figma</span><span>Photoshop</span><span>Responsive</span>
+            </div>
+            <div class="wid-card-line"></div>
+          </div>
+          <div class="wid-card wid-card--3">
+            <div class="wid-card-icon"><i class='bx bx-video'></i></div>
+            <div class="wid-card-num">03</div>
+            <h4>Video Editing</h4>
+            <p>Crafting cinematic promotional videos, reels, and content that tells compelling brand stories.</p>
+            <div class="wid-card-tags">
+              <span>CapCut</span><span>Premiere</span><span>Motion</span>
+            </div>
+            <div class="wid-card-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ TIMELINE ══════════ -->
+      <div class="about-timeline-section">
+        <div class="atl-header">
+          <span class="wid-label">MY JOURNEY</span>
+          <h3 class="wid-title">Experience & <span>Education</span></h3>
+        </div>
+        <div class="atl-track">
+          <!-- Left side -->
+          <div class="atl-side atl-side--left">
+            <div class="atl-card atl-card--exp">
+              <div class="atl-card-badge">EXP</div>
+              <span class="atl-date"><i class='bx bx-calendar'></i> 2023 – Present</span>
+              <h4>Freelance Web Developer</h4>
+              <p>Building responsive websites, landing pages, and portfolios for clients worldwide. Specializing in
+                modern web technologies and pixel-perfect design.</p>
+              <div class="atl-tech-row">
+                <i class='bx bxl-html5'></i><i class='bx bxl-css3'></i><i class='bx bxl-javascript'></i><i
+                  class='bx bxl-react'></i>
+              </div>
+            </div>
+            <div class="atl-card atl-card--exp">
+              <div class="atl-card-badge">EXP</div>
+              <span class="atl-date"><i class='bx bx-calendar'></i> Aug – Dec 2024</span>
+              <h4>On-the-Job Training</h4>
+              <p>525 hours at the Office of the Registrar — ACLC College of Daet. Gained real-world experience in IT
+                systems, data management, and software operations.</p>
+              <div class="atl-tech-row">
+                <i class='bx bx-desktop'></i><i class='bx bx-server'></i><i class='bx bx-data'></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center line -->
+          <div class="atl-center-line">
+            <div class="atl-center-dot atl-cd-1"><i class='bx bx-code-alt'></i></div>
+            <div class="atl-line-seg"></div>
+            <div class="atl-center-dot atl-cd-2"><i class='bx bx-briefcase'></i></div>
+            <div class="atl-line-seg"></div>
+            <div class="atl-center-dot atl-cd-3"><i class='bx bx-video'></i></div>
+            <div class="atl-line-seg"></div>
+            <div class="atl-center-dot atl-cd-4"><i class='bx bx-book-open'></i></div>
+          </div>
+
+          <!-- Right side -->
+          <div class="atl-side atl-side--right">
+            <div class="atl-card atl-card--edu">
+              <div class="atl-card-badge atl-badge--edu">EDU</div>
+              <span class="atl-date"><i class='bx bx-calendar'></i> 2022 – Present</span>
+              <h4>Video Editor & Creative Designer</h4>
+              <p>Creating promotional videos, UI assets, and social media content. Bringing brands to life through
+                visual storytelling and motion design.</p>
+              <div class="atl-tech-row">
+                <i class='bx bx-video'></i><i class='bx bx-image'></i><i class='bx bxl-figma'></i>
+              </div>
+            </div>
+            <div class="atl-card atl-card--edu">
+              <div class="atl-card-badge atl-badge--edu">EDU</div>
+              <span class="atl-date"><i class='bx bx-calendar'></i> Current</span>
+              <h4>BS Information Technology</h4>
+              <p>ACLC College of Daet, a member of AMA Education System. Studying software development, networking,
+                databases, and modern IT systems.</p>
+              <div class="atl-tech-row">
+                <i class='bx bxl-python'></i><i class='bx bxl-nodejs'></i><i class='bx bx-data'></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════ SKILLS WITH PROGRESS BARS ══════════ -->
+      <div class="about-skills-pro">
+        <div class="asp-header">
+          <span class="wid-label">SKILL SET</span>
+          <h3 class="wid-title">Technical <span>Proficiency</span></h3>
+        </div>
+        <div class="asp-grid">
+          <div class="asp-col">
+            <h4 class="asp-col-title"><i class='bx bxl-html5'></i> Frontend</h4>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>HTML5 / CSS3</span><span class="asp-pct">92%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="92"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>JavaScript</span><span class="asp-pct">80%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>React</span><span class="asp-pct">70%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="70"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>Responsive / Tailwind</span><span class="asp-pct">85%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+          </div>
+          <div class="asp-col">
+            <h4 class="asp-col-title"><i class='bx bx-server'></i> Backend & Tools</h4>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>Node.js / Express</span><span class="asp-pct">65%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="65"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>Python</span><span class="asp-pct">60%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="60"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>MongoDB / PostgreSQL</span><span class="asp-pct">62%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="62"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>Git / GitHub</span><span class="asp-pct">78%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="78"></div>
+              </div>
+            </div>
+          </div>
+          <div class="asp-col">
+            <h4 class="asp-col-title"><i class='bx bx-palette'></i> Design & Creative</h4>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>UI/UX Design</span><span class="asp-pct">88%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="88"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>Figma</span><span class="asp-pct">82%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="82"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>Video Editing</span><span class="asp-pct">85%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="asp-bar-item">
+              <div class="asp-bar-top"><span>Photoshop</span><span class="asp-pct">72%</span></div>
+              <div class="asp-bar-track">
+                <div class="asp-bar-fill" data-width="72"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- ===== ADVANCED PREMIUM GALLERY ===== -->
+      <section class="pgx-gallery-section" id="gallery">
+
+        <!-- Ambient background orbs -->
+        <div class="pgx-bg-orb pgx-orb-1"></div>
+        <div class="pgx-bg-orb pgx-orb-2"></div>
+
+        <!-- Header -->
+        <div class="pgx-header">
+          <div class="pgx-eyebrow">
+            <span class="pgx-eyebrow-line"></span>
+            <span class="pgx-eyebrow-text">CAPTURED MOMENTS</span>
+            <span class="pgx-eyebrow-line"></span>
+          </div>
+          <h2 class="pgx-title">My <span>Gallery</span></h2>
+          <p class="pgx-subtitle">A glimpse into my journey, workspace, and life beyond the screen.</p>
+        </div>
+
+        <!-- Marquee Track — Row 1 (left) -->
+        <div class="pgx-marquee-wrap">
+          <div class="pgx-marquee-track pgx-track-1" id="pgxTrack1">
+
+            <div class="pgx-mq-card" data-index="0">
+              <div class="pgx-mq-inner">
+                <img src="imgae/01.jpg" alt="Profile Photo" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-camera'></i> Profile</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Main Profile Shot</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="1">
+              <div class="pgx-mq-inner">
+                <img src="imgae/received_2306073673121096.jpeg" alt="Moment" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-image'></i> Moment</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">A Special Moment</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="2">
+              <div class="pgx-mq-inner">
+                <img src="imgae/received_444184058689443.jpeg" alt="Memory" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-landscape'></i> Memory</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Cherished Memory</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="3">
+              <div class="pgx-mq-inner">
+                <img src="imgae/received_616997177863436.jpeg" alt="Workspace" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-desktop'></i> Workspace</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">My Dev Setup</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="4">
+              <div class="pgx-mq-inner">
+                <img src="imgae/PHANTOM-OCTA.jpg" alt="Sport Fest" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-trophy'></i> Sport Fest</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Sport Fest Highlight</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="5">
+              <div class="pgx-mq-inner">
+                <img src="imgae/Screenshot_20260318-083540.jpg" alt="Highlight" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-star'></i> Creative</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Creative Highlight</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="6">
+              <div class="pgx-mq-inner">
+                <img src="imgae/Screenshot_20260318-083427.jpg" alt="Movie Poster" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-film'></i> Creative</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Movie Poster Design</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /track1 — JS will clone for seamless loop -->
+        </div>
+
+        <!-- Marquee Track — Row 2 (right, reverse) -->
+        <div class="pgx-marquee-wrap pgx-marquee-wrap--rev">
+          <div class="pgx-marquee-track pgx-track-2" id="pgxTrack2">
+
+            <div class="pgx-mq-card" data-index="4">
+              <div class="pgx-mq-inner">
+                <img src="imgae/PHANTOM-OCTA.jpg" alt="Sport Fest" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-trophy'></i> Sport Fest</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Sport Fest Highlight</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="6">
+              <div class="pgx-mq-inner">
+                <img src="imgae/Screenshot_20260318-083427.jpg" alt="Movie Poster" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-film'></i> Creative</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Movie Poster Design</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="0">
+              <div class="pgx-mq-inner">
+                <img src="imgae/01.jpg" alt="Profile" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-camera'></i> Profile</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Main Profile Shot</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="3">
+              <div class="pgx-mq-inner">
+                <img src="imgae/received_616997177863436.jpeg" alt="Workspace" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-desktop'></i> Workspace</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">My Dev Setup</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="5">
+              <div class="pgx-mq-inner">
+                <img src="imgae/Screenshot_20260318-083540.jpg" alt="Highlight" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-star'></i> Creative</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Creative Highlight</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="2">
+              <div class="pgx-mq-inner">
+                <img src="imgae/received_444184058689443.jpeg" alt="Memory" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-landscape'></i> Memory</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">Cherished Memory</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pgx-mq-card" data-index="1">
+              <div class="pgx-mq-inner">
+                <img src="imgae/received_2306073673121096.jpeg" alt="Moment" loading="lazy">
+                <div class="pgx-mq-overlay">
+                  <span class="pgx-mq-tag"><i class='bx bx-image'></i> Moment</span>
+                  <button class="pgx-zoom-btn" aria-label="View"><i class='bx bx-expand-alt'></i></button>
+                  <p class="pgx-mq-cap">A Special Moment</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /track2 -->
+        </div>
+
+        <!-- Hint label -->
+        <div class="pgx-counter-bar">
+          <i class='bx bx-mouse-alt' style="vertical-align:middle;margin-right:.3rem;"></i>
+          Hover to pause &nbsp;·&nbsp; Click to view fullscreen
+        </div>
+
+      </section>
+
+      <!-- ===== ADVANCED LIGHTBOX ===== -->
+      <div class="pgx-lightbox" id="pgxLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <div class="pgx-lb-backdrop"></div>
+
+        <div class="pgx-lb-shell">
+          <!-- Close -->
+          <button class="pgx-lb-close" id="pgxLbClose" aria-label="Close"><i class='bx bx-x'></i> Close</button>
+
+          <!-- Navigation -->
+          <button class="pgx-lb-nav pgx-lb-prev" id="pgxLbPrev" aria-label="Previous photo">
+            <i class='bx bx-chevron-left'></i>
+          </button>
+          <button class="pgx-lb-nav pgx-lb-next" id="pgxLbNext" aria-label="Next photo">
+            <i class='bx bx-chevron-right'></i>
+          </button>
+
+          <!-- Image stage -->
+          <div class="pgx-lb-stage">
+            <div class="pgx-lb-img-wrap">
+              <img src="" alt="" id="pgxLbImg" class="pgx-lb-img">
+              <div class="pgx-lb-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom bar -->
+          <div class="pgx-lb-bar">
+            <div class="pgx-lb-caption" id="pgxLbCaption"></div>
+            <div class="pgx-lb-counter">
+              <span id="pgxLbCur">1</span>
+              <span class="pgx-lb-slash">/</span>
+              <span id="pgxLbTot">7</span>
+            </div>
+            <!-- Thumbnail strip -->
+            <div class="pgx-lb-thumbs" id="pgxLbThumbs"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+  </section>
+
+  <section class="certificates" id="certificates">
+    <div class="section-title">
+      <h2 class="heading">Expertise <span>Certified/Certificate</span></h2>
+      <p class="sub-heading">Patunay ng aking dedikasyon at husay sa pagbuo ng makabagong teknolohiya.</p>
+    </div>
+
+    <div class="cert-grid">
+      <div class="premium-card">
+        <div class="card-inner">
+          <div class="card-img-box">
+            <img src="imgae/TESTDA CERTIFICATE 69 .jpg" alt="Certificate 1">
+            <div class="card-badge">Verified</div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="cert-date">2025</span>
+              <h3>TESDA</h3>
+            </div>
+            <p>COMPUTER SYSTEM SERVICING</p>
+            <div class="card-footer">
+              <span class="issuer"><i class='bx bxs-award'></i> EXECUTIVE EXCELLENCE OF TECHINICAL SKILLS INC.</span>
+              <button class="btn-premium-view" data-src="imgae/TESTDA CERTIFICATE.jpg">
+                <span>View Full</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <div class="card-inner">
+          <div class="card-img-box">
+            <img src="imgae/CERTIFICATE-AI-COPYWRITING-SKILLS-merged-pages-181.jpg" alt="Certificate 2">
+            <div class="card-badge">Verified</div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="cert-date">2024</span>
+              <h3>AI-COPYWRITING</h3>
+            </div>
+            <p>Parciticipating in the 4 hours training program entittled
+              Sparks: FAST-TRACK YOUR AI COPY WRITTING SKILLS </p>
+            <div class="card-footer">
+              <span class="issuer"><i class='bx bxs-award'></i>DIGITAL TRANSFORMATION CENTERS</span>
+              <button class="btn-premium-view" data-src="imgae/CERTIFICATE-AI-COPYWRITING-SKILLS-merged-pages-181.jpg">
+                <span>View Full</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <div class="card-inner">
+          <div class="card-img-box">
+            <img src="imgae/IMG_20260327_091430_928.jpg" alt="Certificate 2">
+            <div class="card-badge">Verified</div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="cert-date">2025</span>
+              <h3>Certificate of Good Moral Character</h3>
+            </div>
+            <p>Recognized for maintaining good conduct, discipline, and integrity throughout my academic journey.</p>
+            <div class="card-footer">
+              <span class="issuer"><i class='bx bxs-award'></i>Awarded by ACLC College of Daet</span>
+              <button class="btn-premium-view" data-src="imgae/IMG_20260327_091430_928.jpg">
+                <span>View Full</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <div class="card-inner">
+          <div class="card-img-box">
+            <img src="imgae/IMG_20260315_121117_960.jpg" alt="Certificate 2">
+            <div class="card-badge">Verified</div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="cert-date">2025</span>
+              <h3>Certificate of Recognition – Outstanding OJT Performance</h3>
+            </div>
+            <p>Recognized for Outstanding Performance in On-the-Job Training (OJT), demonstrating strong skills,
+              dedication, and professionalism in real-world work experience.</p>
+            <div class="card-footer">
+              <span class="issuer"><i class='bx bxs-award'></i>ACLC College of Daet, 2025</span>
+              <button class="btn-premium-view" data-src="imgae/IMG_20260315_121117_960.jpg">
+                <span>View Full</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="premium-card">
+        <div class="card-inner">
+          <div class="card-img-box">
+            <img src="imgae/IMG_20260315_171109_864.jpg" alt="Certificate 3">
+            <div class="card-badge">Verified</div>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="cert-date">2024</span>
+              <h3>ON-JOB-TRAINING</h3>
+            </div>
+            <p>On job training at the office of Regisrar from Agust 19, 2024 - december 20, 2024, Accumulating a total
+              of
+              five hundred twenty five (525) hours.
+            </p>
+            <div class="card-footer">
+              <span class="issuer"><i class='bx bxs-award'></i> ACLC COLLGE OF DAET</span>
+              <button class="btn-premium-view" data-src="imgae/IMG_20260315_122642_618.jpg">
+                <span>View Full</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="premiumModal" class="p-modal">
+    <div class="p-modal-overlay"></div>
+    <span class="p-close">&times;</span>
+    <div class="p-modal-container">
+      <img id="p-modal-img" src="" alt="Certificate View">
+      <div class="p-modal-caption">Official Certification - Verified Professional</div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- ═══════════════════════════════════════════════════
+     SKILLS SECTION v4 — NEW PREMIUM DESIGN
+═══════════════════════════════════════════════════ -->
+  <section class="nsk-section" id="tech-skills">
+
+    <!-- Animated BG -->
+    <div class="nsk-bg">
+      <div class="nsk-orb nsk-orb1"></div>
+      <div class="nsk-orb nsk-orb2"></div>
+      <canvas class="nsk-particle-canvas" id="nskParticleCanvas"></canvas>
+    </div>
+
+    <!-- ── SECTION HEADER ── -->
+    <div class="nsk-header">
+      <div class="nsk-eyebrow"><span></span>TECH STACK &amp; SKILLS<span></span></div>
+      <h2 class="nsk-title">My <em>Arsenal</em></h2>
+      <p class="nsk-sub">Every tool I master to build extraordinary digital experiences</p>
+    </div>
+
+    <!-- ── LIVE SKILL COUNTER STRIP ── -->
+    <div class="nsk-counter-strip">
+      <div class="nsk-count-item">
+        <span class="nsk-count-num" data-count="20">0</span>
+        <span class="nsk-count-label">Technologies</span>
+      </div>
+      <div class="nsk-count-div"></div>
+      <div class="nsk-count-item">
+        <span class="nsk-count-num" data-count="5">0</span>
+        <span class="nsk-count-label">Years Learning</span>
+      </div>
+      <div class="nsk-count-div"></div>
+      <div class="nsk-count-item">
+        <span class="nsk-count-num" data-count="95">0</span>
+        <span class="nsk-count-label">% Top Skill</span>
+      </div>
+      <div class="nsk-count-div"></div>
+      <div class="nsk-count-item">
+        <span class="nsk-count-num" data-count="3">0</span>
+        <span class="nsk-count-label">Domains</span>
+      </div>
+    </div>
+
+    <!-- ── FILTER TABS ── -->
+    <div class="nsk-tabs" id="nskTabs">
+      <button class="nsk-tab active" data-filter="all">
+        <i class='bx bx-category'></i><span>All</span>
+      </button>
+      <button class="nsk-tab" data-filter="frontend">
+        <i class='bx bx-code-alt'></i><span>Frontend</span>
+      </button>
+      <button class="nsk-tab" data-filter="backend">
+        <i class='bx bx-server'></i><span>Backend</span>
+      </button>
+      <button class="nsk-tab" data-filter="design">
+        <i class='bx bx-brush'></i><span>Design</span>
+      </button>
+      <button class="nsk-tab" data-filter="tools">
+        <i class='bx bx-wrench'></i><span>Tools</span>
+      </button>
+      <div class="nsk-tab-indicator"></div>
+    </div>
+
+    <!-- ── TECH HEX GRID ── -->
+    <div class="nsk-hex-grid" id="nskHexGrid">
+
+      <!-- JS-generated hex cards go here -->
+    </div>
+
+    <!-- ── SKILL PROGRESS BARS ── -->
+    <div class="nsk-bars-section">
+      <div class="nsk-bars-header">
+        <span class="nsk-eyebrow2"><span></span>PROFICIENCY<span></span></span>
+        <h3 class="nsk-bars-title">Skill <em>Breakdown</em></h3>
+      </div>
+      <div class="nsk-bars-grid">
+        <div class="nsk-bar-item">
+          <div class="nsk-bar-top">
+            <div class="nsk-bar-label"><i class='bx bxl-html5'></i> HTML5 / CSS3</div>
+            <span class="nsk-bar-pct" data-target="95">0%</span>
+          </div>
+          <div class="nsk-bar-track">
+            <div class="nsk-bar-fill" data-w="95">
+              <div class="nsk-bar-shine"></div>
+            </div>
+          </div>
+          <span class="nsk-bar-badge nsk-badge-expert">Expert</span>
+        </div>
+        <div class="nsk-bar-item">
+          <div class="nsk-bar-top">
+            <div class="nsk-bar-label"><i class='bx bxl-javascript'></i> JavaScript ES6+</div>
+            <span class="nsk-bar-pct" data-target="85">0%</span>
+          </div>
+          <div class="nsk-bar-track">
+            <div class="nsk-bar-fill" data-w="85">
+              <div class="nsk-bar-shine"></div>
+            </div>
+          </div>
+          <span class="nsk-bar-badge nsk-badge-advanced">Advanced</span>
+        </div>
+        <div class="nsk-bar-item">
+          <div class="nsk-bar-top">
+            <div class="nsk-bar-label"><i class='bx bxl-react'></i> React / Frameworks</div>
+            <span class="nsk-bar-pct" data-target="78">0%</span>
+          </div>
+          <div class="nsk-bar-track">
+            <div class="nsk-bar-fill" data-w="78">
+              <div class="nsk-bar-shine"></div>
+            </div>
+          </div>
+          <span class="nsk-bar-badge nsk-badge-advanced">Advanced</span>
+        </div>
+        <div class="nsk-bar-item">
+          <div class="nsk-bar-top">
+            <div class="nsk-bar-label"><i class='bx bxl-nodejs'></i> Node.js / Backend</div>
+            <span class="nsk-bar-pct" data-target="70">0%</span>
+          </div>
+          <div class="nsk-bar-track">
+            <div class="nsk-bar-fill" data-w="70">
+              <div class="nsk-bar-shine"></div>
+            </div>
+          </div>
+          <span class="nsk-bar-badge nsk-badge-mid">Intermediate</span>
+        </div>
+        <div class="nsk-bar-item">
+          <div class="nsk-bar-top">
+            <div class="nsk-bar-label"><i class='bx bx-palette'></i> UI/UX Design</div>
+            <span class="nsk-bar-pct" data-target="88">0%</span>
+          </div>
+          <div class="nsk-bar-track">
+            <div class="nsk-bar-fill" data-w="88">
+              <div class="nsk-bar-shine"></div>
+            </div>
+          </div>
+          <span class="nsk-bar-badge nsk-badge-advanced">Advanced</span>
+        </div>
+        <div class="nsk-bar-item">
+          <div class="nsk-bar-top">
+            <div class="nsk-bar-label"><i class='bx bxl-figma'></i> Figma / Design Tools</div>
+            <span class="nsk-bar-pct" data-target="85">0%</span>
+          </div>
+          <div class="nsk-bar-track">
+            <div class="nsk-bar-fill" data-w="85">
+              <div class="nsk-bar-shine"></div>
+            </div>
+          </div>
+          <span class="nsk-bar-badge nsk-badge-advanced">Advanced</span>
+        </div>
+        <div class="nsk-bar-item">
+          <div class="nsk-bar-top">
+            <div class="nsk-bar-label"><i class='bx bx-video'></i> Video Editing</div>
+            <span class="nsk-bar-pct" data-target="90">0%</span>
+          </div>
+          <div class="nsk-bar-track">
+            <div class="nsk-bar-fill" data-w="90">
+              <div class="nsk-bar-shine"></div>
+            </div>
+          </div>
+          <span class="nsk-bar-badge nsk-badge-expert">Expert</span>
+        </div>
+        <div class="nsk-bar-item">
+          <div class="nsk-bar-top">
+            <div class="nsk-bar-label"><i class='bx bxl-git'></i> Git / Version Control</div>
+            <span class="nsk-bar-pct" data-target="82">0%</span>
+          </div>
+          <div class="nsk-bar-track">
+            <div class="nsk-bar-fill" data-w="82">
+              <div class="nsk-bar-shine"></div>
+            </div>
+          </div>
+          <span class="nsk-bar-badge nsk-badge-advanced">Advanced</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SOFT SKILLS + TAGS ROW ── -->
+    <div class="nsk-bottom-row">
+      <!-- Soft Skills -->
+      <div class="nsk-soft">
+        <div class="nsk-eyebrow2"><span></span>SOFT SKILLS<span></span></div>
+        <div class="nsk-soft-grid">
+          <div class="nsk-soft-chip"><i class='bx bx-brain'></i>Problem Solving</div>
+          <div class="nsk-soft-chip"><i class='bx bx-message-rounded-dots'></i>Communication</div>
+          <div class="nsk-soft-chip"><i class='bx bx-time-five'></i>Time Management</div>
+          <div class="nsk-soft-chip"><i class='bx bx-group'></i>Teamwork</div>
+          <div class="nsk-soft-chip"><i class='bx bx-refresh'></i>Adaptability</div>
+          <div class="nsk-soft-chip"><i class='bx bx-bulb'></i>Creativity</div>
+          <div class="nsk-soft-chip"><i class='bx bx-target-lock'></i>Attention to Detail</div>
+          <div class="nsk-soft-chip"><i class='bx bx-trending-up'></i>Continuous Learning</div>
+        </div>
+      </div>
+      <!-- Expertise Tags -->
+      <div class="nsk-tags">
+        <div class="nsk-eyebrow2"><span></span>EXPERTISE AREAS<span></span></div>
+        <div class="nsk-tags-cloud">
+          <span class="nsk-tag nsk-tag-hot">Responsive Design</span>
+          <span class="nsk-tag">RESTful APIs</span>
+          <span class="nsk-tag nsk-tag-hot">Full Stack Dev</span>
+          <span class="nsk-tag">Database Design</span>
+          <span class="nsk-tag">Web Performance</span>
+          <span class="nsk-tag nsk-tag-hot">UI/UX Design</span>
+          <span class="nsk-tag">SEO Optimization</span>
+          <span class="nsk-tag">Web Security</span>
+          <span class="nsk-tag nsk-tag-hot">Video Production</span>
+          <span class="nsk-tag">Agile / Scrum</span>
+          <span class="nsk-tag">Cross-browser</span>
+          <span class="nsk-tag nsk-tag-hot">Freelancing</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== CURSOR TRAIL CANVAS ===== -->
+  <canvas id="cursorTrailCanvas"></canvas>
+
+  <!-- ═══════════════════════════════════════════════════
+     PREMIUM RADAR + STATS COMBINED
+═══════════════════════════════════════════════════ -->
+  <section class="radar-section" id="radar-skills">
+
+    <div class="ts-bg" style="z-index:0">
+      <div class="ts-bg-orb"
+        style="width:500px;height:500px;top:-100px;right:-100px;background:radial-gradient(circle,rgba(234,88,12,0.1),transparent 60%);position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;">
+      </div>
+    </div>
+
+    <div class="radar-inner">
+      <!-- Left: radar canvas -->
+      <div class="radar-left">
+        <span class="ts-overline"><span class="ts-overline-dot"></span>SKILLS RADAR<span
+            class="ts-overline-dot"></span></span>
+        <h3 class="ts-prof-title">Visual <span>Overview</span></h3>
+        <p style="font-size:1.55rem;color:#777;margin-bottom:3rem;line-height:1.8">A 360° view of my technical strengths
+          across all domains.</p>
+
+        <div class="radar-canvas-wrap">
+          <canvas id="radarChart" width="420" height="420"></canvas>
+          <div class="radar-center-badge">
+            <span>JAY</span>
+            <span>DEV</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: legend + stats -->
+      <div class="radar-right">
+        <div class="radar-legend-v2">
+          <div class="legend-item-v2" data-skill="0">
+            <div class="lv2-bar-wrap">
+              <div class="lv2-info">
+                <div class="lv2-dot" style="background:#ea580c"></div>
+                <span>HTML / CSS</span>
+              </div>
+              <span class="lv2-pct">95%</span>
+            </div>
+            <div class="lv2-track">
+              <div class="lv2-fill" style="width:0%;background:linear-gradient(90deg,#ea580c,#ff8c00)" data-w="95">
+              </div>
+            </div>
+          </div>
+          <div class="legend-item-v2" data-skill="1">
+            <div class="lv2-bar-wrap">
+              <div class="lv2-info">
+                <div class="lv2-dot" style="background:#f7df1e"></div>
+                <span>JavaScript</span>
+              </div>
+              <span class="lv2-pct">85%</span>
+            </div>
+            <div class="lv2-track">
+              <div class="lv2-fill" style="width:0%;background:linear-gradient(90deg,#f7df1e,#fbbf24)" data-w="85">
+              </div>
+            </div>
+          </div>
+          <div class="legend-item-v2" data-skill="2">
+            <div class="lv2-bar-wrap">
+              <div class="lv2-info">
+                <div class="lv2-dot" style="background:#a259ff"></div>
+                <span>UI/UX Design</span>
+              </div>
+              <span class="lv2-pct">88%</span>
+            </div>
+            <div class="lv2-track">
+              <div class="lv2-fill" style="width:0%;background:linear-gradient(90deg,#a259ff,#7c3aed)" data-w="88">
+              </div>
+            </div>
+          </div>
+          <div class="legend-item-v2" data-skill="3">
+            <div class="lv2-bar-wrap">
+              <div class="lv2-info">
+                <div class="lv2-dot" style="background:#61dafb"></div>
+                <span>React / Frontend</span>
+              </div>
+              <span class="lv2-pct">78%</span>
+            </div>
+            <div class="lv2-track">
+              <div class="lv2-fill" style="width:0%;background:linear-gradient(90deg,#61dafb,#38bdf8)" data-w="78">
+              </div>
+            </div>
+          </div>
+          <div class="legend-item-v2" data-skill="4">
+            <div class="lv2-bar-wrap">
+              <div class="lv2-info">
+                <div class="lv2-dot" style="background:#8cc84b"></div>
+                <span>Node.js / Backend</span>
+              </div>
+              <span class="lv2-pct">70%</span>
+            </div>
+            <div class="lv2-track">
+              <div class="lv2-fill" style="width:0%;background:linear-gradient(90deg,#8cc84b,#22c55e)" data-w="70">
+              </div>
+            </div>
+          </div>
+          <div class="legend-item-v2" data-skill="5">
+            <div class="lv2-bar-wrap">
+              <div class="lv2-info">
+                <div class="lv2-dot" style="background:#ff6b6b"></div>
+                <span>Video Editing</span>
+              </div>
+              <span class="lv2-pct">90%</span>
+            </div>
+            <div class="lv2-track">
+              <div class="lv2-fill" style="width:0%;background:linear-gradient(90deg,#ff6b6b,#ef4444)" data-w="90">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill level legend -->
+        <div class="radar-level-key">
+          <div class="rlk-item"><span class="rlk-dot rlk-expert"></span><span>Expert (90%+)</span></div>
+          <div class="rlk-item"><span class="rlk-dot rlk-advanced"></span><span>Advanced (75–89%)</span></div>
+          <div class="rlk-item"><span class="rlk-dot rlk-inter"></span><span>Intermediate (60–74%)</span></div>
+        </div>
+
+        <!-- Mini stat cards -->
+        <div class="radar-mini-stats">
+          <div class="rms-card">
+            <i class='bx bx-code-alt'></i>
+            <strong>15+</strong>
+            <span>Technologies</span>
+          </div>
+          <div class="rms-card">
+            <i class='bx bx-trophy'></i>
+            <strong>3</strong>
+            <span>Certifications</span>
+          </div>
+          <div class="rms-card">
+            <i class='bx bx-rocket'></i>
+            <strong>525h</strong>
+            <span>OJT Hours</span>
+          </div>
+          <div class="rms-card">
+            <i class='bx bx-star'></i>
+            <strong>5★</strong>
+            <span>Client Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ULTRA PREMIUM SERVICES SECTION v2 ===== -->
+  <section class="services" id="services">
+
+    <!-- Animated Background Elements -->
+    <div class="srv-bg">
+      <div class="srv-orb srv-orb-1"></div>
+      <div class="srv-orb srv-orb-2"></div>
+      <div class="srv-orb srv-orb-3"></div>
+      <div class="srv-grid-lines"></div>
+    </div>
+
+    <!-- Section Header -->
+    <div class="srv-header">
+      <div class="srv-eyebrow">
+        <span class="srv-eyebrow-line"></span>
+        <span class="srv-eyebrow-text"><i class='bx bx-briefcase-alt-2'></i> WHAT I OFFER</span>
+        <span class="srv-eyebrow-line"></span>
+      </div>
+      <h2 class="srv-title">Premium <span>Services</span></h2>
+      <p class="srv-subtitle">End-to-end digital solutions crafted with precision, passion, and cutting-edge technology
+        — built to grow your business.</p>
+
+      <!-- Live Stats Strip -->
+      <div class="srv-stats-strip">
+        <div class="srv-stat-item">
+          <span class="srv-stat-n">5+</span>
+          <span class="srv-stat-l">Projects Delivered</span>
+        </div>
+        <div class="srv-stat-sep"></div>
+        <div class="srv-stat-item">
+          <span class="srv-stat-n">3+</span>
+          <span class="srv-stat-l">Happy Clients</span>
+        </div>
+        <div class="srv-stat-sep"></div>
+        <div class="srv-stat-item">
+          <span class="srv-stat-n">100%</span>
+          <span class="srv-stat-l">Satisfaction</span>
+        </div>
+        <div class="srv-stat-sep"></div>
+        <div class="srv-stat-item">
+          <span class="srv-stat-n">24h</span>
+          <span class="srv-stat-l">Response Time</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="srv-grid">
+
+      <!-- Card 1: Web Development — FEATURED -->
+      <div class="srv-card srv-card--featured" data-service="web">
+        <div class="srv-card-glow"></div>
+        <div class="srv-card-top">
+          <div class="srv-card-num">01</div>
+          <div class="srv-badge srv-badge--hot">Most Popular</div>
+        </div>
+        <div class="srv-icon-wrap">
+          <div class="srv-icon-ring"></div>
+          <i class='bx bx-code-alt'></i>
+        </div>
+        <h3 class="srv-card-title">Web Development</h3>
+        <p class="srv-card-desc">From blazing-fast landing pages to full-scale web applications — I engineer digital
+          products that perform, scale, and impress.</p>
+        <ul class="srv-checklist">
+          <li><span class="srv-check-dot"></span>Responsive & Mobile-First Design</li>
+          <li><span class="srv-check-dot"></span>React / Node.js Full Stack Apps</li>
+          <li><span class="srv-check-dot"></span>SEO-Optimized Architecture</li>
+          <li><span class="srv-check-dot"></span>Performance & Core Web Vitals</li>
+          <li><span class="srv-check-dot"></span>Cross-Browser Compatibility</li>
+        </ul>
+        <div class="srv-tech-row">
+          <span><i class='bx bxl-html5'></i> HTML5</span>
+          <span><i class='bx bxl-css3'></i> CSS3</span>
+          <span><i class='bx bxl-javascript'></i> JS</span>
+          <span><i class='bx bxl-react'></i> React</span>
+        </div>
+        <a href="#contact" class="srv-cta-btn">
+          Start Project <i class='bx bx-right-arrow-alt'></i>
+        </a>
+        <div class="srv-card-line"></div>
+      </div>
+
+      <!-- Card 2: UI/UX Design -->
+      <div class="srv-card" data-service="design">
+        <div class="srv-card-glow"></div>
+        <div class="srv-card-top">
+          <div class="srv-card-num">02</div>
+        </div>
+        <div class="srv-icon-wrap">
+          <div class="srv-icon-ring"></div>
+          <i class='bx bxl-figma'></i>
+        </div>
+        <h3 class="srv-card-title">UI/UX Design</h3>
+        <p class="srv-card-desc">Pixel-perfect interfaces designed with empathy. I craft experiences users love —
+          intuitive, accessible, and visually unforgettable.</p>
+        <ul class="srv-checklist">
+          <li><span class="srv-check-dot"></span>User Research & Wireframing</li>
+          <li><span class="srv-check-dot"></span>High-Fidelity Figma Prototypes</li>
+          <li><span class="srv-check-dot"></span>Design Systems & Style Guides</li>
+          <li><span class="srv-check-dot"></span>Accessibility (WCAG) Standards</li>
+          <li><span class="srv-check-dot"></span>Developer Handoff Assets</li>
+        </ul>
+        <div class="srv-tech-row">
+          <span><i class='bx bxl-figma'></i> Figma</span>
+          <span><i class='bx bx-palette'></i> Adobe XD</span>
+          <span><i class='bx bx-brush'></i> Photoshop</span>
+        </div>
+        <a href="#contact" class="srv-cta-btn">
+          Get a Design <i class='bx bx-right-arrow-alt'></i>
+        </a>
+        <div class="srv-card-line"></div>
+      </div>
+
+      <!-- Card 3: Backend Development -->
+      <div class="srv-card" data-service="backend">
+        <div class="srv-card-glow"></div>
+        <div class="srv-card-top">
+          <div class="srv-card-num">03</div>
+        </div>
+        <div class="srv-icon-wrap">
+          <div class="srv-icon-ring"></div>
+          <i class='bx bx-server'></i>
+        </div>
+        <h3 class="srv-card-title">Backend Development</h3>
+        <p class="srv-card-desc">Scalable server-side logic, REST APIs, and database architecture — the powerful engine
+          running behind your product.</p>
+        <ul class="srv-checklist">
+          <li><span class="srv-check-dot"></span>RESTful & GraphQL APIs</li>
+          <li><span class="srv-check-dot"></span>Database Design (SQL & NoSQL)</li>
+          <li><span class="srv-check-dot"></span>JWT / OAuth Authentication</li>
+          <li><span class="srv-check-dot"></span>Cloud & Server Deployment</li>
+          <li><span class="srv-check-dot"></span>API Integration & Testing</li>
+        </ul>
+        <div class="srv-tech-row">
+          <span><i class='bx bxl-nodejs'></i> Node.js</span>
+          <span><i class='bx bxl-mongodb'></i> MongoDB</span>
+          <span><i class='bx bxl-python'></i> Python</span>
+        </div>
+        <a href="#contact" class="srv-cta-btn">
+          Build Backend <i class='bx bx-right-arrow-alt'></i>
+        </a>
+        <div class="srv-card-line"></div>
+      </div>
+
+      <!-- Card 4: E-Commerce Solutions -->
+      <div class="srv-card" data-service="ecommerce">
+        <div class="srv-card-glow"></div>
+        <div class="srv-card-top">
+          <div class="srv-card-num">04</div>
+          <div class="srv-badge srv-badge--new">High Demand</div>
+        </div>
+        <div class="srv-icon-wrap">
+          <div class="srv-icon-ring"></div>
+          <i class='bx bx-store-alt'></i>
+        </div>
+        <h3 class="srv-card-title">E-Commerce Solutions</h3>
+        <p class="srv-card-desc">Complete online stores engineered to convert visitors into buyers — seamless checkout,
+          fast load times, and rock-solid security.</p>
+        <ul class="srv-checklist">
+          <li><span class="srv-check-dot"></span>Custom Shopping Cart & Checkout</li>
+          <li><span class="srv-check-dot"></span>Payment Gateway Integration</li>
+          <li><span class="srv-check-dot"></span>Inventory & Order Management</li>
+          <li><span class="srv-check-dot"></span>Product Catalog & Search</li>
+          <li><span class="srv-check-dot"></span>Analytics & Conversion Tracking</li>
+        </ul>
+        <div class="srv-tech-row">
+          <span><i class='bx bx-cart'></i> WooCommerce</span>
+          <span><i class='bx bxl-shopify'></i> Shopify</span>
+          <span><i class='bx bx-code'></i> Custom</span>
+        </div>
+        <a href="#contact" class="srv-cta-btn">
+          Open a Store <i class='bx bx-right-arrow-alt'></i>
+        </a>
+        <div class="srv-card-line"></div>
+      </div>
+
+      <!-- Card 5: Video Editing -->
+      <div class="srv-card" data-service="video">
+        <div class="srv-card-glow"></div>
+        <div class="srv-card-top">
+          <div class="srv-card-num">05</div>
+        </div>
+        <div class="srv-icon-wrap">
+          <div class="srv-icon-ring"></div>
+          <i class='bx bx-video'></i>
+        </div>
+        <h3 class="srv-card-title">Video Editing</h3>
+        <p class="srv-card-desc">Cinematic promotional videos, social media reels, and brand films that stop the scroll
+          and tell your story powerfully.</p>
+        <ul class="srv-checklist">
+          <li><span class="srv-check-dot"></span>Promotional & Brand Videos</li>
+          <li><span class="srv-check-dot"></span>Social Media Reels & Shorts</li>
+          <li><span class="srv-check-dot"></span>Motion Graphics & Text FX</li>
+          <li><span class="srv-check-dot"></span>Color Grading & Audio Mix</li>
+          <li><span class="srv-check-dot"></span>Thumbnail & Poster Design</li>
+        </ul>
+        <div class="srv-tech-row">
+          <span><i class='bx bx-film'></i> CapCut</span>
+          <span><i class='bx bx-play-circle'></i> Premiere</span>
+          <span><i class='bx bx-movie-play'></i> Motion</span>
+        </div>
+        <a href="#contact" class="srv-cta-btn">
+          Create Video <i class='bx bx-right-arrow-alt'></i>
+        </a>
+        <div class="srv-card-line"></div>
+      </div>
+
+      <!-- Card 6: Tech Consultation -->
+      <div class="srv-card" data-service="consult">
+        <div class="srv-card-glow"></div>
+        <div class="srv-card-top">
+          <div class="srv-card-num">06</div>
+        </div>
+        <div class="srv-icon-wrap">
+          <div class="srv-icon-ring"></div>
+          <i class='bx bx-bulb'></i>
+        </div>
+        <h3 class="srv-card-title">Tech Consultation</h3>
+        <p class="srv-card-desc">Strategic tech guidance to help you choose the right stack, audit performance, and plan
+          your roadmap with confidence.</p>
+        <ul class="srv-checklist">
+          <li><span class="srv-check-dot"></span>Tech Stack Selection & Review</li>
+          <li><span class="srv-check-dot"></span>Code Audit & Refactoring</li>
+          <li><span class="srv-check-dot"></span>Performance & SEO Audit</li>
+          <li><span class="srv-check-dot"></span>Project Roadmap Planning</li>
+          <li><span class="srv-check-dot"></span>1-on-1 Developer Mentoring</li>
+        </ul>
+        <div class="srv-tech-row">
+          <span><i class='bx bx-brain'></i> Strategy</span>
+          <span><i class='bx bx-search-alt'></i> Audit</span>
+          <span><i class='bx bx-conversation'></i> Mentoring</span>
+        </div>
+        <a href="#contact" class="srv-cta-btn">
+          Book a Call <i class='bx bx-right-arrow-alt'></i>
+        </a>
+        <div class="srv-card-line"></div>
+      </div>
+
+    </div><!-- end srv-grid -->
+
+    <!-- Process Section -->
+    <div class="srv-process">
+      <div class="srv-process-header">
+        <span class="srv-eyebrow-text"
+          style="justify-content:center; display:flex; align-items:center; gap:.8rem; margin-bottom:1rem;"><i
+            class='bx bx-git-branch'></i> HOW I WORK</span>
+        <h3 class="srv-process-title">My <span>Workflow</span></h3>
+        <p class="srv-process-sub">A transparent, collaborative process — from first chat to final launch.</p>
+      </div>
+      <div class="srv-process-steps">
+        <div class="srv-step">
+          <div class="srv-step-num">01</div>
+          <div class="srv-step-icon"><i class='bx bx-message-square-dots'></i></div>
+          <h4>Discovery</h4>
+          <p>We talk about your goals, scope, and vision. Free consultation included.</p>
+          <div class="srv-step-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+        </div>
+        <div class="srv-step">
+          <div class="srv-step-num">02</div>
+          <div class="srv-step-icon"><i class='bx bxl-figma'></i></div>
+          <h4>Design</h4>
+          <p>Wireframes, prototypes, and design approval before a single line of code.</p>
+          <div class="srv-step-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+        </div>
+        <div class="srv-step">
+          <div class="srv-step-num">03</div>
+          <div class="srv-step-icon"><i class='bx bx-code-alt'></i></div>
+          <h4>Develop</h4>
+          <p>Clean, documented code built with modern best practices and performance in mind.</p>
+          <div class="srv-step-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+        </div>
+        <div class="srv-step">
+          <div class="srv-step-num">04</div>
+          <div class="srv-step-icon"><i class='bx bx-rocket'></i></div>
+          <h4>Launch</h4>
+          <p>Tested, optimized, and deployed — with post-launch support guaranteed.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upgraded CTA Banner -->
+    <div class="srv-cta-banner">
+      <div class="srv-cta-bg-glow"></div>
+      <div class="srv-cta-content">
+        <div class="srv-cta-left">
+          <span class="srv-cta-eyebrow"><i class='bx bx-rocket'></i> Ready to Build Something Amazing?</span>
+          <h3 class="srv-cta-title">Let's Turn Your Vision<br>Into <span>Reality</span></h3>
+          <p class="srv-cta-sub">Free consultation. No hidden fees. Delivered on time — every time.</p>
+        </div>
+        <div class="srv-cta-right">
+          <div class="srv-cta-guarantee">
+            <div class="srv-guarantee-item"><i class='bx bx-check-circle'></i><span>Free Initial Consultation</span>
+            </div>
+            <div class="srv-guarantee-item"><i class='bx bx-check-circle'></i><span>On-Time Delivery</span></div>
+            <div class="srv-guarantee-item"><i class='bx bx-check-circle'></i><span>Post-Launch Support</span></div>
+            <div class="srv-guarantee-item"><i class='bx bx-check-circle'></i><span>100% Satisfaction</span></div>
+          </div>
+          <div class="srv-cta-btns">
+            <a href="#contact" class="srv-btn-primary">
+              <i class='bx bx-message-square-dots'></i> Hire Me Now
+            </a>
+            <a href="project-folder/OCTA_Resume_Final.pdf" download class="srv-btn-ghost">
+              <i class='bx bxs-download'></i> Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== ENHANCED PROJECTS SECTION ===== -->
+  <section class="projects" id="projects">
+    <h2 class="section-heading">Featured <span>Projects</span></h2>
+    <p class="projects-subtitle">
+      Explore my recent work showcasing creativity, technical skills, and problem-solving abilities
+    </p>
+
+    <!-- Filter Tabs -->
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">
+        <i class='bx bx-grid-alt'></i> All Projects
+      </button>
+      <button class="filter-btn" data-filter="web">
+        <i class='bx bx-globe'></i> Web Apps
+      </button>
+      <button class="filter-btn" data-filter="design">
+        <i class='bx bx-palette'></i> UI/UX Design
+      </button>
+      <button class="filter-btn" data-filter="fullstack">
+        <i class='bx bx-code-curly'></i> Full Stack
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-box">
+      <!-- Project 1: Portfolio Website -->
+      <div class="project-card" data-category="web design">
+        <div class="project-image">
+          <img src="imgae/Screenshot 2026-03-17 225400.png" alt="Portfolio Website">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" title="Live Demo">
+                <i class='bx bx-link-external'></i>
+              </a>
+              <a href="#" class="project-link" title="View Code">
+                <i class='bx bxl-github'></i>
+              </a>
+              <button class="project-link project-details-btn" data-project="1">
+                <i class='bx bx-info-circle'></i>
+              </button>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-badge completed">Completed</span>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3>Personal Portfolio</h3>
+            <div class="project-meta">
+              <span class="project-date">
+                <i class='bx bx-calendar'></i> Dec 2024
+              </span>
+            </div>
+          </div>
+
+          <p class="project-description">
+            A modern, fully responsive portfolio website with smooth animations, dark/light mode toggle, and optimized
+            performance.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive</span>
+          </div>
+
+          <div class="project-stats">
+            <div class="stat">
+              <i class='bx bx-star'></i>
+              <span>Featured</span>
+            </div>
+            <div class="stat">
+              <i class='bx bx-time'></i>
+              <span>2 weeks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: E-Commerce Platform -->
+      <div class="project-card" data-category="web fullstack">
+        <div class="project-image">
+          <img src="https://iexperto.io/wp-content/uploads/2022/11/eCommerce-Website-Design-1.jpg"
+            alt="E-Commerce Platform">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" title="Live Demo">
+                <i class='bx bx-link-external'></i>
+              </a>
+              <a href="#" class="project-link" title="View Code">
+                <i class='bx bxl-github'></i>
+              </a>
+              <button class="project-link project-details-btn" data-project="2">
+                <i class='bx bx-info-circle'></i>
+              </button>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-badge in-progress">In Progress</span>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3>E-Commerce Platform</h3>
+            <div class="project-meta">
+              <span class="project-date">
+                <i class='bx bx-calendar'></i> Nov 2024
+              </span>
+            </div>
+          </div>
+
+          <p class="project-description">
+            Full-featured online store with shopping cart, payment integration, admin dashboard, and inventory
+            management system.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Stripe</span>
+          </div>
+
+          <div class="project-stats">
+            <div class="stat">
+              <i class='bx bx-trending-up'></i>
+              <span>Popular</span>
+            </div>
+            <div class="stat">
+              <i class='bx bx-time'></i>
+              <span>4 weeks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Task Management App -->
+      <div class="project-card" data-category="web fullstack">
+        <div class="project-image">
+          <img src="https://www.codester.com/static/uploads/items/000/020/20841/preview/001.jpg"
+            alt="Task Management App">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" title="Live Demo">
+                <i class='bx bx-link-external'></i>
+              </a>
+              <a href="#" class="project-link" title="View Code">
+                <i class='bx bxl-github'></i>
+              </a>
+              <button class="project-link project-details-btn" data-project="3">
+                <i class='bx bx-info-circle'></i>
+              </button>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-badge completed">Completed</span>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3>Task Manager Pro</h3>
+            <div class="project-meta">
+              <span class="project-date">
+                <i class='bx bx-calendar'></i> Oct 2024
+              </span>
+            </div>
+          </div>
+
+          <p class="project-description">
+            Collaborative task management tool with real-time updates, team collaboration features, and progress
+            tracking.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">Material-UI</span>
+            <span class="tech-tag">Real-time</span>
+          </div>
+
+          <div class="project-stats">
+            <div class="stat">
+              <i class='bx bx-group'></i>
+              <span>Team Project</span>
+            </div>
+            <div class="stat">
+              <i class='bx bx-time'></i>
+              <span>3 weeks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Restaurant Website -->
+      <div class="project-card" data-category="web design">
+        <div class="project-image">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.9neLVhO120dwgx_SwVAsFwHaEo?pid=Api&h=220&P=0"
+            alt="Task Management App">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" title="Live Demo">
+                <i class='bx bx-link-external'></i>
+              </a>
+              <a href="#" class="project-link" title="View Code">
+                <i class='bx bxl-github'></i>
+              </a>
+              <button class="project-link project-details-btn" data-project="4">
+                <i class='bx bx-info-circle'></i>
+              </button>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-badge completed">Completed</span>
+          </div>
+        </div>
+
+
+
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3>Gourmet Restaurant</h3>
+            <div class="project-meta">
+              <span class="project-date">
+                <i class='bx bx-calendar'></i> Sep 2024
+              </span>
+            </div>
+          </div>
+
+          <p class="project-description">
+            Beautiful restaurant website with online menu, reservation system, gallery, and customer reviews section.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">jQuery</span>
+            <span class="tech-tag">PHP</span>
+          </div>
+
+          <div class="project-stats">
+            <div class="stat">
+              <i class='bx bx-briefcase'></i>
+              <span>Client Work</span>
+            </div>
+            <div class="stat">
+              <i class='bx bx-time'></i>
+              <span>2 weeks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Weather App -->
+      <div class="project-card" data-category="web">
+        <div class="project-image">
+          <img
+            src="https://www.lifewire.com/thmb/ec9CnePRoIJTRujwi3_lZneZkUs=/3280x2160/filters:no_upscale():max_bytes(150000):strip_icc()/accuweather-long-term-forecast-e9009d5bfe854b9abba9f5b98eec1f28.png"
+            alt="Weather App">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" title="Live Demo">
+                <i class='bx bx-link-external'></i>
+              </a>
+              <a href="#" class="project-link" title="View Code">
+                <i class='bx bxl-github'></i>
+              </a>
+              <button class="project-link project-details-btn" data-project="5">
+                <i class='bx bx-info-circle'></i>
+              </button>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-badge completed">Completed</span>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3>Weather Forecast App</h3>
+            <div class="project-meta">
+              <span class="project-date">
+                <i class='bx bx-calendar'></i> Aug 2024
+              </span>
+            </div>
+          </div>
+
+          <p class="project-description">
+            Real-time weather application with 7-day forecast, location search, and beautiful weather animations.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">API</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Chart.js</span>
+          </div>
+
+          <div class="project-stats">
+            <div class="stat">
+              <i class='bx bx-code-alt'></i>
+              <span>API Integration</span>
+            </div>
+            <div class="stat">
+              <i class='bx bx-time'></i>
+              <span>1 week</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: Dashboard UI -->
+      <div class="project-card" data-category="design">
+        <div class="project-image">
+          <img
+            src="https://img.freepik.com/premium-vector/comprehensive-analytics-dashboard-ui-with-diverse-data-visualization-user-interface-analytics-dashboard-featuring-variety-graphs-charts-efficient-data-management-monitoring_924480-25.jpg?w=2000"
+            alt="Dashboard UI">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" title="Live Demo">
+                <i class='bx bx-link-external'></i>
+              </a>
+              <a href="#" class="project-link" title="View Code">
+                <i class='bx bxl-github'></i>
+              </a>
+              <button class="project-link project-details-btn" data-project="6">
+                <i class='bx bx-info-circle'></i>
+              </button>
+            </div>
+          </div>
+          <div class="project-status">
+            <span class="status-badge completed">Completed</span>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3>Admin Dashboard</h3>
+            <div class="project-meta">
+              <span class="project-date">
+                <i class='bx bx-calendar'></i> Jul 2024
+              </span>
+            </div>
+          </div>
+
+          <p class="project-description">
+            Modern admin dashboard with data visualization, user management, and analytics features with clean UI.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Recharts</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">TypeScript</span>
+          </div>
+
+          <div class="project-stats">
+            <div class="stat">
+              <i class='bx bx-line-chart'></i>
+              <span>Data Viz</span>
+            </div>
+            <div class="stat">
+              <i class='bx bx-time'></i>
+              <span>3 weeks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="projects-cta">
+      <a href="https://github.com/JVOR3" target="_blank" class="btn-view-more">
+        <i class='bx bxl-github'></i> View More on GitHub
+      </a>
+      <p class="cta-text">Want to see more of my work? Check out my GitHub profile!</p>
+    </div>
+  </section>
+
+  <!-- ===== PROJECT DETAILS MODAL ===== -->
+  <div id="projectModal" class="project-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <button class="modal-close">
+        <i class='bx bx-x'></i>
+      </button>
+
+      <div class="modal-content">
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="Project Preview">
+        </div>
+
+        <div class="modal-info">
+          <h2 id="modalTitle">Project Title</h2>
+          <div class="modal-meta">
+            <span id="modalDate"><i class='bx bx-calendar'></i> Date</span>
+            <span id="modalStatus"></span>
+          </div>
+
+          <div class="modal-section">
+            <h3><i class='bx bx-info-circle'></i> About</h3>
+            <p id="modalDescription">Project description...</p>
+          </div>
+
+          <div class="modal-section">
+            <h3><i class='bx bx-target-lock'></i> Key Features</h3>
+            <ul id="modalFeatures" class="feature-list">
+              <!-- Features will be added dynamically -->
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3><i class='bx bx-code-block'></i> Technologies Used</h3>
+            <div id="modalTech" class="modal-tech-tags">
+              <!-- Tech tags will be added dynamically -->
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h3><i class='bx bx-trophy'></i> Challenges & Solutions</h3>
+            <p id="modalChallenges">Challenges faced and how they were solved...</p>
+          </div>
+
+          <div class="modal-actions">
+            <a href="#" id="modalLiveLink" class="modal-btn primary" target="_blank">
+              <i class='bx bx-link-external'></i> Live Demo
+            </a>
+            <a href="#" id="modalGithubLink" class="modal-btn secondary" target="_blank">
+              <i class='bx bxl-github'></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+     GRAPHIC DESIGN & VIDEO EDIT SAMPLES SECTION
+══════════════════════════════════════════════════════ -->
+  <section class="creative-samples" id="creative-samples">
+
+    <!-- Background decoration -->
+    <div class="cs-bg-deco">
+      <div class="cs-bg-orb cs-orb-1"></div>
+      <div class="cs-bg-orb cs-orb-2"></div>
+      <div class="cs-bg-grid"></div>
+    </div>
+
+    <!-- Section Header -->
+    <div class="cs-section-header">
+      <span class="cs-eyebrow"><i class='bx bx-palette'></i> CREATIVE WORK</span>
+      <h2 class="cs-title">Graphic Design & <span>Video Edits</span></h2>
+      <p class="cs-subtitle">A showcase of my visual storytelling — from eye-catching designs to cinematic video edits.
+      </p>
+      <div class="cs-title-line"></div>
+    </div>
+
+    <!-- Tab Switcher -->
+    <div class="cs-tabs">
+      <button class="cs-tab-btn cs-tab-active" data-tab="graphic">
+        <i class='bx bx-image-alt'></i> Graphic Design
+      </button>
+      <button class="cs-tab-btn" data-tab="video">
+        <i class='bx bx-video'></i> Video Edits
+      </button>
+    </div>
+
+    <!-- ── GRAPHIC DESIGN TAB ── -->
+    <div class="cs-tab-content cs-tab-show" id="cs-tab-graphic">
+      <div class="cs-grid">
+
+        <div class="cs-card" data-cs-index="0" data-cs-type="graphic">
+          <div class="cs-card-img-wrap">
+            <img src="imgae/Screenshot_20260318-083540.jpg" alt="Graphic Design Sample 1" class="cs-card-img">
+            <div class="cs-card-overlay">
+              <div class="cs-overlay-inner">
+                <i class='bx bx-zoom-in'></i>
+                <span>View Full</span>
+              </div>
+            </div>
+            <div class="cs-card-badge"><i class='bx bx-palette'></i> Design</div>
+          </div>
+          <div class="cs-card-body">
+            <h4 class="cs-card-title">Poster Design</h4>
+            <p class="cs-card-desc">Creative poster layout with bold typography and visual hierarchy.</p>
+            <div class="cs-card-tools">
+              <span><i class='bx bxl-figma'></i> Figma</span>
+              <span><i class='bx bx-brush'></i> Photoshop</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-card" data-cs-index="1" data-cs-type="graphic">
+          <div class="cs-card-img-wrap">
+            <img src="imgae/Screenshot_20260318-083427.jpg" alt="Graphic Design Sample 2" class="cs-card-img">
+            <div class="cs-card-overlay">
+              <div class="cs-overlay-inner">
+                <i class='bx bx-zoom-in'></i>
+                <span>View Full</span>
+              </div>
+            </div>
+            <div class="cs-card-badge"><i class='bx bx-palette'></i> Design</div>
+          </div>
+          <div class="cs-card-body">
+            <h4 class="cs-card-title">Movie Poster</h4>
+            <p class="cs-card-desc">Cinematic-style movie poster with dramatic lighting and composition.</p>
+            <div class="cs-card-tools">
+              <span><i class='bx bx-brush'></i> Photoshop</span>
+              <span><i class='bx bx-image'></i> Canva</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-card" data-cs-index="2" data-cs-type="graphic">
+          <div class="cs-card-img-wrap">
+            <img src="imgae/PHANTOM-OCTA.jpg" alt="Graphic Design Sample 3" class="cs-card-img">
+            <div class="cs-card-overlay">
+              <div class="cs-overlay-inner">
+                <i class='bx bx-zoom-in'></i>
+                <span>View Full</span>
+              </div>
+            </div>
+            <div class="cs-card-badge"><i class='bx bx-palette'></i> Design</div>
+          </div>
+          <div class="cs-card-body">
+            <h4 class="cs-card-title">Event Graphic</h4>
+            <p class="cs-card-desc">Sport Fest promotional graphic with energetic visuals and brand identity.</p>
+            <div class="cs-card-tools">
+              <span><i class='bx bx-image'></i> Canva</span>
+              <span><i class='bx bxl-figma'></i> Figma</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder card — replace src with your actual graphic -->
+        <div class="cs-card cs-card-add">
+          <div class="cs-card-img-wrap cs-add-placeholder">
+            <div class="cs-add-inner">
+              <i class='bx bx-plus-circle'></i>
+              <span>Add Your Design</span>
+            </div>
+          </div>
+          <div class="cs-card-body">
+            <h4 class="cs-card-title">Your Next Design</h4>
+            <p class="cs-card-desc">Replace this card's image src with your own graphic design sample.</p>
+            <div class="cs-card-tools">
+              <span><i class='bx bx-brush'></i> Your Tool</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── VIDEO EDITS TAB ── -->
+    <div class="cs-tab-content" id="cs-tab-video">
+      <div class="cs-grid">
+
+        <!-- Video card 1 — replace with your actual video embed or thumbnail -->
+        <div class="cs-card cs-card-video" data-cs-index="0" data-cs-type="video">
+          <div class="cs-card-img-wrap cs-video-wrap">
+            <!-- Option A: YouTube embed — replace VIDEO_ID -->
+            <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen class="cs-video-iframe"></iframe> -->
+            <!-- Option B: Thumbnail with play button (default) -->
+            <img src="imgae/01.jpg" alt="Video Edit Sample 1" class="cs-card-img">
+            <div class="cs-play-btn"><i class='bx bx-play-circle'></i></div>
+            <div class="cs-card-badge cs-badge-video"><i class='bx bx-video'></i> Video</div>
+          </div>
+          <div class="cs-card-body">
+            <h4 class="cs-card-title">Promo Video Edit</h4>
+            <p class="cs-card-desc">Short-form promotional reel with smooth cuts, color grading, and motion effects.</p>
+            <div class="cs-card-tools">
+              <span><i class='bx bx-video'></i> CapCut</span>
+              <span><i class='bx bx-film'></i> Premiere Pro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video card 2 -->
+        <div class="cs-card cs-card-video" data-cs-index="1" data-cs-type="video">
+          <div class="cs-card-img-wrap cs-video-wrap">
+            <img src="imgae/02.jpg" alt="Video Edit Sample 2" class="cs-card-img">
+            <div class="cs-play-btn"><i class='bx bx-play-circle'></i></div>
+            <div class="cs-card-badge cs-badge-video"><i class='bx bx-video'></i> Video</div>
+          </div>
+          <div class="cs-card-body">
+            <h4 class="cs-card-title">Cinematic Reel</h4>
+            <p class="cs-card-desc">Cinematic edit with mood-driven color grading and dynamic transitions.</p>
+            <div class="cs-card-tools">
+              <span><i class='bx bx-video'></i> CapCut</span>
+              <span><i class='bx bx-film'></i> DaVinci</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video placeholder -->
+        <div class="cs-card cs-card-add">
+          <div class="cs-card-img-wrap cs-add-placeholder">
+            <div class="cs-add-inner">
+              <i class='bx bx-plus-circle'></i>
+              <span>Add Your Video</span>
+            </div>
+          </div>
+          <div class="cs-card-body">
+            <h4 class="cs-card-title">Your Next Video Edit</h4>
+            <p class="cs-card-desc">Replace with a YouTube embed or thumbnail from your video projects.</p>
+            <div class="cs-card-tools">
+              <span><i class='bx bx-video'></i> Your Tool</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cs-cta">
+      <p>Need a creative <strong>graphic design</strong> or <strong>video edit</strong> for your brand?</p>
+      <a href="#contact" class="cs-cta-btn"><i class='bx bx-send'></i> Let's Work Together</a>
+    </div>
+
+  </section>
+
+  <!-- ── Creative Samples Lightbox ── -->
+  <div id="csLightbox" class="cs-lightbox">
+    <div class="cs-lb-overlay"></div>
+    <button class="cs-lb-close"><i class='bx bx-x'></i></button>
+    <button class="cs-lb-prev"><i class='bx bx-chevron-left'></i></button>
+    <button class="cs-lb-next"><i class='bx bx-chevron-right'></i></button>
+    <div class="cs-lb-container">
+      <img id="csLightboxImg" src="" alt="Creative Sample">
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════
+     PREMIUM CLIENT REVIEWS SECTION
+══════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════
+     TESTIMONIALS SECTION — JVOR DEV v4 — PREMIUM REDESIGN
+  ═══════════════════════════════════════════════════════ -->
+  <section class="testimonials" id="testimonials">
+
+    <!-- ── Immersive layered background ── -->
+    <div class="tv4-bg">
+      <div class="tv4-bg-mesh"></div>
+      <div class="tv4-bg-lines"></div>
+      <div class="tv4-orb tv4-orb-a"></div>
+      <div class="tv4-orb tv4-orb-b"></div>
+      <div class="tv4-orb tv4-orb-c"></div>
+    </div>
+
+    <!-- ── HEADER ── -->
+    <div class="tv4-header">
+      <div class="tv4-eyebrow">
+        <span class="tv4-eyebrow-dot"></span>
+        <span>CLIENT TESTIMONIALS</span>
+        <span class="tv4-eyebrow-dot"></span>
+      </div>
+      <h2 class="tv4-title">Trusted by <span>Real People.</span></h2>
+      <p class="tv4-subtitle">Every project is a story — here are a few told by the people who lived it.</p>
+    </div>
+
+    <!-- ── STATS STRIP ── -->
+    <div class="tv4-stats-strip">
+      <div class="tv4-stat">
+        <span class="tv4-stat-n" data-count="5" data-suffix="+">0+</span>
+        <span class="tv4-stat-l">Projects Delivered</span>
+      </div>
+      <div class="tv4-stat-divider"></div>
+      <div class="tv4-stat">
+        <span class="tv4-stat-n" data-count="3" data-suffix="+">0+</span>
+        <span class="tv4-stat-l">Happy Clients</span>
+      </div>
+      <div class="tv4-stat-divider"></div>
+      <div class="tv4-stat">
+        <span class="tv4-stat-n" data-count="100" data-suffix="%" data-is-pct="true">0%</span>
+        <span class="tv4-stat-l">Satisfaction Rate</span>
+      </div>
+      <div class="tv4-stat-divider"></div>
+      <div class="tv4-stat">
+        <span class="tv4-stat-n tv4-static">5.0 ★</span>
+        <span class="tv4-stat-l">Average Rating</span>
+      </div>
+    </div>
+
+    <!-- ── FEATURED HERO QUOTE ── -->
+    <div class="tv4-hero-quote">
+      <div class="tv4-hq-deco">
+        <span class="tv4-hq-line"></span>
+        <span class="tv4-hq-icon"><i class="bx bxs-quote-alt-left"></i></span>
+        <span class="tv4-hq-line"></span>
+      </div>
+      <blockquote class="tv4-hq-text">
+        "The website Jay built for our restaurant has been a massive success. Online reservations doubled in the first
+        month, and customers constantly compliment the beautiful design."
+      </blockquote>
+      <div class="tv4-hq-author">
+        <div class="tv4-hq-avatar-ring">
+          <img src="https://i.pravatar.cc/150?img=68" alt="Carlos Rodriguez" class="tv4-hq-avatar">
+        </div>
+        <div>
+          <strong>Carlos Rodriguez</strong>
+          <span>Restaurant Owner · Gourmet Bistro</span>
+          <div class="tv4-hq-stars">
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FILTER TABS ── -->
+    <div class="tv4-filters">
+      <button class="tv4-filter active" data-cat="all">
+        <i class="bx bx-grid-alt"></i> All
+      </button>
+      <button class="tv4-filter" data-cat="website">
+        <i class="bx bx-globe"></i> Websites
+      </button>
+      <button class="tv4-filter" data-cat="design">
+        <i class="bx bx-palette"></i> Design
+      </button>
+      <button class="tv4-filter" data-cat="video">
+        <i class="bx bx-video"></i> Video
+      </button>
+    </div>
+
+    <!-- ── MASONRY CARDS GRID ── -->
+    <div class="tv4-grid" id="tv4Grid">
+
+      <div class="tv4-card tv4-card--accent" data-category="website">
+        <div class="tv4-card-glow"></div>
+        <div class="tv4-card-top">
+          <div class="tv4-card-avatar-wrap">
+            <img src="https://i.pravatar.cc/150?img=68" alt="Carlos Rodriguez" class="tv4-card-avatar">
+            <span class="tv4-card-badge"><i class="bx bxs-badge-check"></i></span>
+          </div>
+          <div class="tv4-card-meta">
+            <h4>Carlos Rodriguez</h4>
+            <span class="tv4-card-role">Restaurant Owner</span>
+            <span class="tv4-card-company">Gourmet Bistro</span>
+          </div>
+          <div class="tv4-card-stars">
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+          </div>
+        </div>
+        <div class="tv4-card-body">
+          <span class="tv4-open-quote">❝</span>
+          <p>The website Jay built for our restaurant has been a huge success! Online reservations have doubled, and
+            customers constantly compliment the beautiful design.</p>
+        </div>
+        <div class="tv4-card-foot">
+          <span class="tv4-card-type"><i class="bx bx-globe"></i> Restaurant Website</span>
+          <span class="tv4-card-date">Sep 2024</span>
+        </div>
+      </div>
+
+      <div class="tv4-card" data-category="design">
+        <div class="tv4-card-glow"></div>
+        <div class="tv4-card-top">
+          <div class="tv4-card-avatar-wrap">
+            <img src="https://i.pravatar.cc/150?img=47" alt="Maria Santos" class="tv4-card-avatar">
+            <span class="tv4-card-badge"><i class="bx bxs-badge-check"></i></span>
+          </div>
+          <div class="tv4-card-meta">
+            <h4>Maria Santos</h4>
+            <span class="tv4-card-role">Business Owner</span>
+            <span class="tv4-card-company">Santos Boutique</span>
+          </div>
+          <div class="tv4-card-stars">
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+          </div>
+        </div>
+        <div class="tv4-card-body">
+          <span class="tv4-open-quote">❝</span>
+          <p>Jay delivered beyond expectations. Our brand identity looks absolutely stunning — the logo, color palette,
+            and design system were exactly what we needed.</p>
+        </div>
+        <div class="tv4-card-foot">
+          <span class="tv4-card-type"><i class="bx bx-palette"></i> Brand Design</span>
+          <span class="tv4-card-date">Nov 2024</span>
+        </div>
+      </div>
+
+      <div class="tv4-card" data-category="video">
+        <div class="tv4-card-glow"></div>
+        <div class="tv4-card-top">
+          <div class="tv4-card-avatar-wrap">
+            <img src="https://i.pravatar.cc/150?img=33" alt="Mark Reyes" class="tv4-card-avatar">
+            <span class="tv4-card-badge"><i class="bx bxs-badge-check"></i></span>
+          </div>
+          <div class="tv4-card-meta">
+            <h4>Mark Reyes</h4>
+            <span class="tv4-card-role">Content Creator</span>
+            <span class="tv4-card-company">YouTube / Freelance</span>
+          </div>
+          <div class="tv4-card-stars">
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+          </div>
+        </div>
+        <div class="tv4-card-body">
+          <span class="tv4-open-quote">❝</span>
+          <p>The promo video Jay edited blew me away. Cinema-level cuts, transitions, and color grading. My subscribers
+            loved it and engagement went through the roof!</p>
+        </div>
+        <div class="tv4-card-foot">
+          <span class="tv4-card-type"><i class="bx bx-video"></i> Video Editing</span>
+          <span class="tv4-card-date">Jan 2025</span>
+        </div>
+      </div>
+
+      <div class="tv4-card" data-category="website">
+        <div class="tv4-card-glow"></div>
+        <div class="tv4-card-top">
+          <div class="tv4-card-avatar-wrap">
+            <img src="https://i.pravatar.cc/150?img=12" alt="Lena Park" class="tv4-card-avatar">
+            <span class="tv4-card-badge"><i class="bx bxs-badge-check"></i></span>
+          </div>
+          <div class="tv4-card-meta">
+            <h4>Lena Park</h4>
+            <span class="tv4-card-role">Portfolio Client</span>
+            <span class="tv4-card-company">Self-Employed</span>
+          </div>
+          <div class="tv4-card-stars">
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+          </div>
+        </div>
+        <div class="tv4-card-body">
+          <span class="tv4-open-quote">❝</span>
+          <p>Jay built my portfolio from scratch and the result is breathtaking. Every detail was thoughtfully crafted.
+            I've already received interview callbacks because of it!</p>
+        </div>
+        <div class="tv4-card-foot">
+          <span class="tv4-card-type"><i class="bx bx-user"></i> Portfolio Site</span>
+          <span class="tv4-card-date">Feb 2025</span>
+        </div>
+      </div>
+
+      <div class="tv4-card" data-category="design">
+        <div class="tv4-card-glow"></div>
+        <div class="tv4-card-top">
+          <div class="tv4-card-avatar-wrap">
+            <img src="https://i.pravatar.cc/150?img=22" alt="Ryan Cruz" class="tv4-card-avatar">
+            <span class="tv4-card-badge"><i class="bx bxs-badge-check"></i></span>
+          </div>
+          <div class="tv4-card-meta">
+            <h4>Ryan Cruz</h4>
+            <span class="tv4-card-role">Startup Founder</span>
+            <span class="tv4-card-company">TechStartPH</span>
+          </div>
+          <div class="tv4-card-stars">
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+          </div>
+        </div>
+        <div class="tv4-card-body">
+          <span class="tv4-open-quote">❝</span>
+          <p>Jay designed our entire SaaS landing page and dashboard mockup. The quality was insane — I felt like I was
+            working with a senior designer from a top agency.</p>
+        </div>
+        <div class="tv4-card-foot">
+          <span class="tv4-card-type"><i class="bx bx-desktop"></i> SaaS UI Design</span>
+          <span class="tv4-card-date">Mar 2025</span>
+        </div>
+      </div>
+
+      <div class="tv4-card" data-category="website">
+        <div class="tv4-card-glow"></div>
+        <div class="tv4-card-top">
+          <div class="tv4-card-avatar-wrap">
+            <img src="https://i.pravatar.cc/150?img=55" alt="Nico Tan" class="tv4-card-avatar">
+            <span class="tv4-card-badge"><i class="bx bxs-badge-check"></i></span>
+          </div>
+          <div class="tv4-card-meta">
+            <h4>Nico Tan</h4>
+            <span class="tv4-card-role">E-Commerce Owner</span>
+            <span class="tv4-card-company">NicoShop PH</span>
+          </div>
+          <div class="tv4-card-stars">
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+          </div>
+        </div>
+        <div class="tv4-card-body">
+          <span class="tv4-open-quote">❝</span>
+          <p>Our Shopify store makeover exceeded all expectations. Jay's attention to UX details pushed our conversion
+            rate up significantly in the first month alone.</p>
+        </div>
+        <div class="tv4-card-foot">
+          <span class="tv4-card-type"><i class="bx bx-cart"></i> E-Commerce Site</span>
+          <span class="tv4-card-date">Apr 2025</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── INFINITE SCROLL MARQUEE ── -->
+    <div class="tv4-marquee-wrap">
+      <div class="tv4-marquee">
+        <div class="tv4-marquee-inner">
+          <span><i class="bx bxs-star"></i> 5-Star Rated</span>
+          <span><i class="bx bx-rocket"></i> Fast Delivery</span>
+          <span><i class="bx bx-code-alt"></i> Full Stack Dev</span>
+          <span><i class="bx bx-palette"></i> UI/UX Design</span>
+          <span><i class="bx bx-video"></i> Video Editing</span>
+          <span><i class="bx bx-shield-check"></i> Verified Reviews</span>
+          <span><i class="bx bx-globe"></i> Available Worldwide</span>
+          <span><i class="bx bx-check-circle"></i> 100% Satisfaction</span>
+          <!-- Duplicate for seamless infinite loop -->
+          <span><i class="bx bxs-star"></i> 5-Star Rated</span>
+          <span><i class="bx bx-rocket"></i> Fast Delivery</span>
+          <span><i class="bx bx-code-alt"></i> Full Stack Dev</span>
+          <span><i class="bx bx-palette"></i> UI/UX Design</span>
+          <span><i class="bx bx-video"></i> Video Editing</span>
+          <span><i class="bx bx-shield-check"></i> Verified Reviews</span>
+          <span><i class="bx bx-globe"></i> Available Worldwide</span>
+          <span><i class="bx bx-check-circle"></i> 100% Satisfaction</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RATING BREAKDOWN ── -->
+    <div class="tv4-rating-panel">
+      <div class="tv4-rating-left">
+        <div class="tv4-big-score">5.0</div>
+        <div class="tv4-big-stars">
+          <i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i><i class="bx bxs-star"></i>
+        </div>
+        <span class="tv4-score-note">Based on all reviews</span>
+      </div>
+      <div class="tv4-rating-bars">
+        <div class="tv4-rbar-row">
+          <span>5★</span>
+          <div class="tv4-rbar-track">
+            <div class="tv4-rbar-fill" data-w="90"></div>
+          </div>
+          <span>90%</span>
+        </div>
+        <div class="tv4-rbar-row">
+          <span>4★</span>
+          <div class="tv4-rbar-track">
+            <div class="tv4-rbar-fill" data-w="10"></div>
+          </div>
+          <span>10%</span>
+        </div>
+        <div class="tv4-rbar-row">
+          <span>3★</span>
+          <div class="tv4-rbar-track">
+            <div class="tv4-rbar-fill" data-w="0"></div>
+          </div>
+          <span>0%</span>
+        </div>
+        <div class="tv4-rbar-row">
+          <span>2★</span>
+          <div class="tv4-rbar-track">
+            <div class="tv4-rbar-fill" data-w="0"></div>
+          </div>
+          <span>0%</span>
+        </div>
+        <div class="tv4-rbar-row">
+          <span>1★</span>
+          <div class="tv4-rbar-track">
+            <div class="tv4-rbar-fill" data-w="0"></div>
+          </div>
+          <span>0%</span>
+        </div>
+      </div>
+      <div class="tv4-trust-badges">
+        <div class="tv4-trust-item"><i class="bx bx-shield-check"></i><span>Verified Reviews</span></div>
+        <div class="tv4-trust-item"><i class="bx bx-lock-alt"></i><span>Privacy Protected</span></div>
+        <div class="tv4-trust-item"><i class="bx bx-time-five"></i><span>Published Instantly</span></div>
+      </div>
+    </div>
+
+    <!-- ── LEAVE A REVIEW FORM ── -->
+    <div class="tv4-form-section">
+      <div class="tv4-form-intro">
+        <span class="tv4-eyebrow">
+          <span class="tv4-eyebrow-dot"></span>SHARE YOUR EXPERIENCE
+        </span>
+        <h3 class="tv4-form-title">Worked with me?<br><em>Let the world know.</em></h3>
+        <p class="tv4-form-sub">Your honest feedback helps me grow — and helps others make the right choice.</p>
+        <div class="tv4-form-reviewers">
+          <div class="tv4-stacked-avatars">
+            <img src="https://i.pravatar.cc/80?img=68" alt="c1">
+            <img src="https://i.pravatar.cc/80?img=47" alt="c2">
+            <img src="https://i.pravatar.cc/80?img=33" alt="c3">
+            <img src="https://i.pravatar.cc/80?img=12" alt="c4">
+          </div>
+          <span>Join 6+ clients who shared their story</span>
+        </div>
+      </div>
+
+      <form id="reviewForm" class="tv4-form" novalidate>
+        <div class="tv4-form-grid">
+          <div class="tv4-fg">
+            <label><i class="bx bx-user"></i> Full Name <em>*</em></label>
+            <div class="tv4-input-wrap">
+              <input type="text" id="reviewerName" placeholder="Juan Dela Cruz" required autocomplete="name">
+            </div>
+          </div>
+          <div class="tv4-fg">
+            <label><i class="bx bx-envelope"></i> Email Address <em>*</em></label>
+            <div class="tv4-input-wrap">
+              <input type="email" id="reviewerEmail" placeholder="juan@email.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="tv4-fg">
+            <label><i class="bx bx-briefcase"></i> Company / Role</label>
+            <div class="tv4-input-wrap">
+              <input type="text" id="reviewerCompany" placeholder="Your company or position"
+                autocomplete="organization">
+            </div>
+          </div>
+          <div class="tv4-fg">
+            <label><i class="bx bx-category"></i> Project Type</label>
+            <div class="tv4-input-wrap tv4-input-wrap--sel">
+              <select id="reviewerCategory">
+                <option value="website">Website Development</option>
+                <option value="design">Design / Branding</option>
+                <option value="video">Video Editing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="tv4-fg tv4-fg--full">
+            <label><i class="bx bx-message-square-detail"></i> Your Review <em>*</em></label>
+            <div class="tv4-input-wrap tv4-input-wrap--ta">
+              <textarea id="reviewText" rows="5"
+                placeholder="Share your experience — what stood out the most about working with Jay?"
+                required></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="tv4-star-section">
+          <span class="tv4-star-label">Rate Your Experience <em>*</em></span>
+          <div class="tv4-star-picker" id="tv4StarPicker">
+            <button type="button" class="tv4-star-btn" title="Poor">★</button>
+            <button type="button" class="tv4-star-btn" title="Fair">★</button>
+            <button type="button" class="tv4-star-btn" title="Good">★</button>
+            <button type="button" class="tv4-star-btn" title="Very Good">★</button>
+            <button type="button" class="tv4-star-btn" title="Excellent">★</button>
+          </div>
+          <span class="tv4-star-hint" id="tv4StarHint">Click to rate your experience</span>
+          <input type="hidden" id="selectedRating" value="0">
+        </div>
+
+        <button type="submit" class="tv4-submit-btn" id="trSubmitBtn">
+          <span class="tv4-submit-inner" id="tv4SubmitContent">
+            <i class="bx bx-send"></i>
+            <span>Publish My Review</span>
+          </span>
+          <span class="tv4-submit-loading" id="tv4SubmitLoading" style="display:none">
+            <i class="bx bx-loader-alt bx-spin"></i>
+            <span>Publishing...</span>
+          </span>
+        </button>
+      </form>
+    </div>
+
+    <!-- ── CSS + JS for this section ── -->
+    <style>
+      /* ─────────────────────────────────────────────────────
+       TESTIMONIALS v4 — Premium Dark Design
+    ───────────────────────────────────────────────────── */
+      .testimonials {
+        position: relative;
+        padding: 12rem 4% 10rem;
+        overflow: hidden;
+        background: #070710;
+      }
+
+      /* Background */
+      .tv4-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .tv4-bg-mesh {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 80% 60% at 15% 20%, rgba(234, 88, 12, 0.08) 0%, transparent 60%),
+          radial-gradient(ellipse 60% 80% at 85% 70%, rgba(255, 29, 21, 0.06) 0%, transparent 60%),
+          radial-gradient(ellipse 50% 40% at 50% 100%, rgba(234, 88, 12, 0.05) 0%, transparent 50%);
+      }
+
+      .tv4-bg-lines {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(234, 88, 12, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(234, 88, 12, 0.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+      }
+
+      .tv4-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+
+      .tv4-orb-a {
+        width: 500px;
+        height: 500px;
+        background: rgba(234, 88, 12, 0.12);
+        top: -100px;
+        left: -150px;
+        animation: tv4OrbFloat 18s ease-in-out infinite;
+      }
+
+      .tv4-orb-b {
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 29, 21, 0.08);
+        bottom: 10%;
+        right: -100px;
+        animation: tv4OrbFloat 22s ease-in-out infinite reverse;
+      }
+
+      .tv4-orb-c {
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 159, 28, 0.06);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: tv4OrbFloat 15s ease-in-out infinite 3s;
+      }
+
+      @keyframes tv4OrbFloat {
+
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+
+        50% {
+          transform: translateY(-30px) scale(1.05);
+        }
+      }
+
+      .tv4-orb-c {
+        animation-name: tv4OrbFloatC;
+      }
+
+      @keyframes tv4OrbFloatC {
+
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        50% {
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+      }
+
+      /* Eyebrow */
+      .tv4-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: #ea580c;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .tv4-eyebrow-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ea580c;
+        box-shadow: 0 0 8px #ea580c;
+      }
+
+      /* Header */
+      .tv4-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 6rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .tv4-header .tv4-eyebrow {
+        justify-content: center;
+      }
+
+      .tv4-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(3.2rem, 5vw, 5.5rem);
+        font-weight: 900;
+        color: #fff;
+        line-height: 1.1;
+        margin: 0 0 1.6rem;
+        letter-spacing: -0.02em;
+      }
+
+      .tv4-title span {
+        background: linear-gradient(135deg, #ea580c, #ff9f1c, #ff4b4b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tv4-subtitle {
+        font-size: 1.7rem;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* Stats Strip */
+      .tv4-stats-strip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        flex-wrap: wrap;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 2rem;
+        padding: 3rem 4rem;
+        margin: 0 auto 7rem;
+        max-width: 900px;
+        position: relative;
+        z-index: 2;
+        backdrop-filter: blur(12px);
+      }
+
+      .tv4-stat {
+        flex: 1;
+        text-align: center;
+        min-width: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .tv4-stat-n {
+        font-size: 3.8rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #ea580c, #ff9f1c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1;
+      }
+
+      .tv4-static {
+        -webkit-text-fill-color: transparent;
+      }
+
+      .tv4-stat-l {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.45);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .tv4-stat-divider {
+        width: 1px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 0 1rem;
+      }
+
+      /* Hero Quote */
+      .tv4-hero-quote {
+        max-width: 860px;
+        margin: 0 auto 8rem;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        padding: 5rem 5rem;
+        background: linear-gradient(135deg, rgba(234, 88, 12, 0.08), rgba(255, 29, 21, 0.05));
+        border: 1px solid rgba(234, 88, 12, 0.2);
+        border-radius: 2.4rem;
+        backdrop-filter: blur(16px);
+      }
+
+      .tv4-hq-deco {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+      }
+
+      .tv4-hq-line {
+        flex: 1;
+        height: 1px;
+        background: rgba(234, 88, 12, 0.3);
+        max-width: 80px;
+      }
+
+      .tv4-hq-icon {
+        font-size: 2.4rem;
+        color: #ea580c;
+        background: rgba(234, 88, 12, 0.15);
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(234, 88, 12, 0.3);
+      }
+
+      .tv4-hq-text {
+        font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.88);
+        line-height: 1.7;
+        margin: 0 0 3rem;
+        font-weight: 400;
+      }
+
+      .tv4-hq-author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.8rem;
+      }
+
+      .tv4-hq-avatar-ring {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        padding: 3px;
+        background: linear-gradient(135deg, #ea580c, #ff9f1c);
+      }
+
+      .tv4-hq-avatar {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .tv4-hq-author strong {
+        display: block;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+
+      .tv4-hq-author span {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.3rem;
+        display: block;
+        margin: 0.3rem 0;
+      }
+
+      .tv4-hq-stars {
+        color: #f59e0b;
+        font-size: 1.4rem;
+        display: flex;
+        gap: 0.2rem;
+      }
+
+      /* Filter Tabs */
+      .tv4-filters {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 5rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .tv4-filter {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1.1rem 2.4rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 5rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.4rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .tv4-filter:hover {
+        border-color: rgba(234, 88, 12, 0.4);
+        color: #ea580c;
+        background: rgba(234, 88, 12, 0.06);
+      }
+
+      .tv4-filter.active {
+        background: linear-gradient(135deg, #ea580c, #c2410c);
+        border-color: transparent;
+        color: #fff;
+        box-shadow: 0 6px 24px rgba(234, 88, 12, 0.4);
+      }
+
+      /* Grid */
+      .tv4-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.4rem;
+        max-width: 1300px;
+        margin: 0 auto 8rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Cards */
+      .tv4-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 2rem;
+        padding: 3rem;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        overflow: hidden;
+        backdrop-filter: blur(8px);
+      }
+
+      .tv4-card:hover {
+        border-color: rgba(234, 88, 12, 0.35);
+        transform: translateY(-6px);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(234, 88, 12, 0.15);
+      }
+
+      .tv4-card--accent {
+        background: linear-gradient(135deg, rgba(234, 88, 12, 0.1), rgba(255, 29, 21, 0.06));
+        border-color: rgba(234, 88, 12, 0.25);
+      }
+
+      .tv4-card-glow {
+        position: absolute;
+        inset: 0;
+        border-radius: 2rem;
+        background: radial-gradient(ellipse at top left, rgba(234, 88, 12, 0.12), transparent 60%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+
+      .tv4-card:hover .tv4-card-glow {
+        opacity: 1;
+      }
+
+      .tv4-card-top {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.4rem;
+        margin-bottom: 2rem;
+      }
+
+      .tv4-card-avatar-wrap {
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .tv4-card-avatar {
+        width: 5.2rem;
+        height: 5.2rem;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(234, 88, 12, 0.4);
+      }
+
+      .tv4-card-badge {
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        background: #ea580c;
+        color: #fff;
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        border: 2px solid #070710;
+      }
+
+      .tv4-card-meta {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .tv4-card-meta h4 {
+        color: #fff;
+        font-size: 1.55rem;
+        font-weight: 700;
+        margin: 0 0 0.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .tv4-card-role {
+        display: block;
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .tv4-card-company {
+        display: block;
+        font-size: 1.15rem;
+        color: #ea580c;
+        font-weight: 600;
+      }
+
+      .tv4-card-stars {
+        color: #f59e0b;
+        font-size: 1.3rem;
+        display: flex;
+        gap: 0.15rem;
+        flex-shrink: 0;
+      }
+
+      .tv4-card-body {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+
+      .tv4-open-quote {
+        font-size: 5rem;
+        line-height: 1;
+        color: rgba(234, 88, 12, 0.2);
+        font-family: Georgia, serif;
+        display: block;
+        margin-bottom: -1rem;
+      }
+
+      .tv4-card-body p {
+        font-size: 1.4rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+      }
+
+      .tv4-card-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 1.6rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .tv4-card-type {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.45);
+        font-weight: 600;
+      }
+
+      .tv4-card-date {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .tv4-card.hidden {
+        display: none;
+      }
+
+      /* Marquee */
+      .tv4-marquee-wrap {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        margin: 0 -4% 8rem;
+        padding: 2rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .tv4-marquee-wrap::before,
+      .tv4-marquee-wrap::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 120px;
+        z-index: 2;
+      }
+
+      .tv4-marquee-wrap::before {
+        left: 0;
+        background: linear-gradient(90deg, #070710, transparent);
+      }
+
+      .tv4-marquee-wrap::after {
+        right: 0;
+        background: linear-gradient(-90deg, #070710, transparent);
+      }
+
+      .tv4-marquee-inner {
+        display: flex;
+        gap: 4rem;
+        width: max-content;
+        animation: tv4Marquee 30s linear infinite;
+      }
+
+      .tv4-marquee-inner span {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-size: 1.35rem;
+        font-weight: 600;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.05em;
+      }
+
+      .tv4-marquee-inner span i {
+        color: #ea580c;
+        font-size: 1.5rem;
+      }
+
+      @keyframes tv4Marquee {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Rating panel */
+      .tv4-rating-panel {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 4rem;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto 10rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 2.4rem;
+        padding: 4rem 5rem;
+        position: relative;
+        z-index: 2;
+        backdrop-filter: blur(12px);
+      }
+
+      .tv4-big-score {
+        font-size: 6rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #ea580c, #ff9f1c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .tv4-big-stars {
+        color: #f59e0b;
+        font-size: 1.8rem;
+        display: flex;
+        gap: 0.3rem;
+        justify-content: center;
+        margin: 0.8rem 0 0.6rem;
+      }
+
+      .tv4-score-note {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.4);
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .tv4-rbar-row {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .tv4-rbar-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .tv4-rbar-row>span:first-child {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.5);
+        min-width: 28px;
+      }
+
+      .tv4-rbar-row>span:last-child {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.4);
+        min-width: 36px;
+        text-align: right;
+      }
+
+      .tv4-rbar-track {
+        flex: 1;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .tv4-rbar-fill {
+        height: 100%;
+        width: 0%;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #ea580c, #ff9f1c);
+        transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .tv4-trust-badges {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+      }
+
+      .tv4-trust-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .tv4-trust-item i {
+        color: #ea580c;
+        font-size: 1.6rem;
+      }
+
+      /* Form section */
+      .tv4-form-section {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 5rem;
+        align-items: start;
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .tv4-form-intro .tv4-eyebrow {
+        margin-bottom: 1.6rem;
+      }
+
+      .tv4-form-title {
+        font-size: clamp(2.8rem, 4vw, 3.8rem);
+        font-weight: 900;
+        color: #fff;
+        line-height: 1.2;
+        margin: 0 0 1.4rem;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .tv4-form-title em {
+        font-style: normal;
+        background: linear-gradient(135deg, #ea580c, #ff9f1c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tv4-form-sub {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.7;
+        margin: 0 0 3rem;
+      }
+
+      .tv4-form-reviewers {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+      }
+
+      .tv4-stacked-avatars {
+        display: flex;
+      }
+
+      .tv4-stacked-avatars img {
+        width: 3.8rem;
+        height: 3.8rem;
+        border-radius: 50%;
+        border: 2px solid #070710;
+        margin-left: -1rem;
+        object-fit: cover;
+      }
+
+      .tv4-stacked-avatars img:first-child {
+        margin-left: 0;
+      }
+
+      .tv4-form-reviewers span {
+        font-size: 1.35rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Form */
+      .tv4-form {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 2.4rem;
+        padding: 4rem;
+        backdrop-filter: blur(12px);
+      }
+
+      .tv4-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2.4rem;
+      }
+
+      .tv4-fg {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .tv4-fg--full {
+        grid-column: 1 / -1;
+      }
+
+      .tv4-fg label {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.65);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .tv4-fg label i {
+        color: #ea580c;
+      }
+
+      .tv4-fg label em {
+        color: #ea580c;
+        font-style: normal;
+      }
+
+      .tv4-input-wrap {
+        position: relative;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.2rem;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .tv4-input-wrap:focus-within {
+        border-color: rgba(234, 88, 12, 0.5);
+        box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+      }
+
+      .tv4-input-wrap input,
+      .tv4-input-wrap select,
+      .tv4-input-wrap textarea {
+        width: 100%;
+        padding: 1.4rem 1.8rem;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 1.4rem;
+        font-family: 'Poppins', sans-serif;
+        resize: none;
+      }
+
+      .tv4-input-wrap select option {
+        background: #1a1a2e;
+        color: #fff;
+      }
+
+      .tv4-input-wrap input::placeholder,
+      .tv4-input-wrap textarea::placeholder {
+        color: rgba(255, 255, 255, 0.25);
+      }
+
+      /* Star Picker */
+      .tv4-star-section {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+        margin-bottom: 3rem;
+      }
+
+      .tv4-star-label {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .tv4-star-label em {
+        color: #ea580c;
+        font-style: normal;
+      }
+
+      .tv4-star-picker {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .tv4-star-btn {
+        background: none;
+        border: none;
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      .tv4-star-btn:hover,
+      .tv4-star-btn.active {
+        color: #f59e0b;
+        transform: scale(1.2);
+      }
+
+      .tv4-star-hint {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.4);
+        font-style: italic;
+      }
+
+      /* Submit */
+      .tv4-submit-btn {
+        width: 100%;
+        padding: 1.8rem 3rem;
+        background: linear-gradient(135deg, #ea580c, #c2410c);
+        border: none;
+        border-radius: 1.4rem;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 30px rgba(234, 88, 12, 0.35);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tv4-submit-btn::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .tv4-submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(234, 88, 12, 0.5);
+      }
+
+      .tv4-submit-btn:hover::before {
+        opacity: 1;
+      }
+
+      .tv4-submit-inner,
+      .tv4-submit-loading {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 1100px) {
+        .tv4-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tv4-rating-panel {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .tv4-trust-badges {
+          display: none;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .testimonials {
+          padding: 8rem 4% 7rem;
+        }
+
+        .tv4-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tv4-stats-strip {
+          gap: 2rem;
+          padding: 2.4rem 2rem;
+        }
+
+        .tv4-stat-divider {
+          display: none;
+        }
+
+        .tv4-hero-quote {
+          padding: 3.5rem 3rem;
+        }
+
+        .tv4-rating-panel {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+          padding: 3rem;
+        }
+
+        .tv4-big-score {
+          font-size: 4.5rem;
+        }
+
+        .tv4-form-section {
+          grid-template-columns: 1fr;
+        }
+
+        .tv4-form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tv4-form {
+          padding: 2.8rem 2.4rem;
+        }
+      }
+    </style>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import { getDatabase, ref, push, onValue, serverTimestamp, query, orderByChild }
+        from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+      /* ── Firebase config ── */
+      const firebaseConfig = {
+        apiKey: "AIzaSyC6CN0FDn2lhS6QCflxFWpFFw7AS24WWWs",
+        authDomain: "portpolio-jvor.firebaseapp.com",
+        databaseURL: "https://portpolio-jvor-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "portpolio-jvor",
+        storageBucket: "portpolio-jvor.firebasestorage.app",
+        messagingSenderId: "764831263383",
+        appId: "1:764831263383:web:e9103eb423db244f5297d2",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const reviewsRef = ref(db, 'reviews');
+
+      /* ── Helpers ── */
+      function escHtml(str) {
+        return String(str)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      function formatDate(ts) {
+        if (!ts) return 'Just now';
+        const d = new Date(ts);
+        return d.toLocaleDateString('en-PH', { month: 'short', year: 'numeric' });
+      }
+
+      function buildCardHTML({ name, company, category, review, rating, timestamp }) {
+        const stars = Array(Math.min(5, Math.max(1, rating))).fill('<i class="bx bxs-star"></i>').join('');
+        const typeMap = {
+          website: { icon: 'bx-globe', label: 'Website' },
+          design: { icon: 'bx-palette', label: 'Design' },
+          video: { icon: 'bx-video', label: 'Video' },
+          other: { icon: 'bx-briefcase', label: 'Project' },
+        };
+        const { icon, label } = typeMap[category] || typeMap.other;
+        const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+        const roleText = company || 'Verified Client';
+        return `
+          <div class="tv4-card-glow"></div>
+          <div class="tv4-card-top">
+            <div class="tv4-card-avatar-wrap">
+              <div class="tv4-card-avatar" style="background:linear-gradient(135deg,#ea580c,#ff1d15);
+                display:flex;align-items:center;justify-content:center;
+                font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:0.05em;">${escHtml(initials)}</div>
+              <span class="tv4-card-badge"><i class="bx bxs-badge-check"></i></span>
+            </div>
+            <div class="tv4-card-meta">
+              <h4>${escHtml(name)}</h4>
+              <span class="tv4-card-role">Verified Client</span>
+              <span class="tv4-card-company">${escHtml(roleText)}</span>
+            </div>
+            <div class="tv4-card-stars">${stars}</div>
+          </div>
+          <div class="tv4-card-body">
+            <span class="tv4-open-quote">❝</span>
+            <p>${escHtml(review)}</p>
+          </div>
+          <div class="tv4-card-foot">
+            <span class="tv4-card-type"><i class="bx ${icon}"></i> ${label}</span>
+            <span class="tv4-card-date">${formatDate(timestamp)}</span>
+          </div>`;
+      }
+
+      function animateCardIn(card, delay = 0) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(28px) scale(0.97)';
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.34,1.2,0.64,1)';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0) scale(1)';
+        }, delay);
+      }
+
+      function showToast(msg, type = 'success') {
+        document.querySelectorAll('.tv4-toast').forEach(t => t.remove());
+        const t = document.createElement('div');
+        t.className = 'tv4-toast';
+        t.style.cssText = `
+          position:fixed;bottom:3rem;right:3rem;z-index:99999;
+          padding:1.6rem 2.8rem;
+          background:${type === 'success'
+            ? 'linear-gradient(135deg,#16a34a,#15803d)'
+            : 'linear-gradient(135deg,#dc2626,#b91c1c)'};
+          color:#fff;font-size:1.5rem;font-weight:600;border-radius:1.6rem;
+          box-shadow:0 12px 40px rgba(0,0,0,0.4);
+          display:flex;align-items:center;gap:1rem;
+          transform:translateY(20px);opacity:0;
+          transition:all 0.4s cubic-bezier(0.34,1.2,0.64,1);
+          pointer-events:none;font-family:'Poppins',sans-serif;`;
+        t.innerHTML = `<i class="bx bx-${type === 'success' ? 'check-circle' : 'error-circle'}" style="font-size:2rem"></i>${escHtml(msg)}`;
+        document.body.appendChild(t);
+        requestAnimationFrame(() => { t.style.opacity = '1'; t.style.transform = 'translateY(0)'; });
+        setTimeout(() => {
+          t.style.opacity = '0'; t.style.transform = 'translateY(20px)';
+          setTimeout(() => t.remove(), 400);
+        }, 3500);
+      }
+
+      /* ── onVisible helper ── */
+      function onVisible(el, fn, threshold = 0.15) {
+        if (!el) return;
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) { fn(); obs.unobserve(el); } });
+        }, { threshold });
+        obs.observe(el);
+      }
+
+      function countUp(el, target, duration = 1800) {
+        const start = performance.now();
+        const suffix = el.dataset.suffix || '';
+        const update = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (p < 1) requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+      }
+
+      /* ══════════════════════════════════════════════
+         LOAD REVIEWS FROM FIREBASE (real-time)
+      ══════════════════════════════════════════════ */
+      const grid = document.getElementById('tv4Grid');
+
+      /* ══════════════════════════════════════════════
+         REAL-TIME SYNC — adds new cards, removes deleted ones
+         Every time Firebase data changes, we diff the DOM
+         against the live snapshot and reconcile.
+      ══════════════════════════════════════════════ */
+      onValue(query(reviewsRef, orderByChild('timestamp')), (snapshot) => {
+        const data = snapshot.val() || {};
+
+        // --- 1. REMOVE cards whose key no longer exists in Firebase ---
+        document.querySelectorAll('.tv4-card[data-fb-key]').forEach(card => {
+          const key = card.dataset.fbKey;
+          if (!data[key]) {
+            // Animate out then remove
+            card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(-16px) scale(0.96)';
+            setTimeout(() => card.remove(), 380);
+          }
+        });
+
+        // --- 2. ADD cards that are in Firebase but not yet in the DOM ---
+        const entries = Object.entries(data)
+          .map(([key, val]) => ({ key, ...val }))
+          .sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+        let delay = 0;
+        entries.forEach(entry => {
+          // Already rendered? Skip.
+          if (document.querySelector(`.tv4-card[data-fb-key="${entry.key}"]`)) return;
+
+          const card = document.createElement('div');
+          card.className = 'tv4-card';
+          card.dataset.category = entry.category || 'other';
+          card.dataset.fbKey = entry.key;
+          card.innerHTML = buildCardHTML(entry);
+
+          grid.insertBefore(card, grid.firstChild);
+          animateCardIn(card, delay);
+          delay += 80;
+        });
+      });
+
+      /* ══════════════════════════════════════════════
+         ANIMATIONS & UI (non-Firebase)
+      ══════════════════════════════════════════════ */
+      document.addEventListener('DOMContentLoaded', () => {
+        const section = document.querySelector('.testimonials');
+
+        onVisible(section, () => {
+          document.querySelectorAll('.tv4-stat-n[data-count]').forEach(el => {
+            countUp(el, parseInt(el.dataset.count, 10));
+          });
+          document.querySelectorAll('.tv4-rbar-fill').forEach(bar => {
+            setTimeout(() => { bar.style.width = (bar.dataset.w || 0) + '%'; }, 200);
+          });
+        }, 0.15);
+
+        /* Filter tabs */
+        const filters = document.querySelectorAll('.tv4-filter');
+        filters.forEach(tab => {
+          tab.addEventListener('click', () => {
+            filters.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const cat = tab.dataset.cat;
+            let delay = 0;
+            document.querySelectorAll('.tv4-card[data-category]').forEach(card => {
+              const show = cat === 'all' || card.dataset.category === cat;
+              if (show) {
+                card.classList.remove('hidden');
+                card.style.opacity = '0'; card.style.transform = 'translateY(24px)';
+                setTimeout(() => {
+                  card.style.transition = 'opacity 0.4s ease, transform 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+                  card.style.opacity = '1'; card.style.transform = 'translateY(0)';
+                }, delay);
+                delay += 60;
+              } else {
+                card.style.opacity = '0'; card.style.transform = 'translateY(16px)';
+                card.style.transition = 'opacity 0.25s ease';
+                setTimeout(() => card.classList.add('hidden'), 280);
+              }
+            });
+          });
+        });
+
+        /* Star picker */
+        const starBtns = document.querySelectorAll('.tv4-star-btn');
+        const ratingInput = document.getElementById('selectedRating');
+        const hintEl = document.getElementById('tv4StarHint');
+        const hints = {
+          1: 'Poor experience', 2: 'Fair — room to improve',
+          3: 'Good work overall', 4: 'Very good!',
+          5: 'Excellent — highly recommend! ⭐'
+        };
+        let selectedStars = 0;
+
+        function highlightStars(n) { starBtns.forEach((b, i) => b.classList.toggle('active', i < n)); }
+
+        starBtns.forEach((btn, i) => {
+          btn.addEventListener('mouseenter', () => {
+            highlightStars(i + 1);
+            if (hintEl) hintEl.textContent = hints[i + 1];
+          });
+          btn.addEventListener('mouseleave', () => {
+            highlightStars(selectedStars);
+            if (hintEl) hintEl.textContent = selectedStars ? hints[selectedStars] : 'Click to rate your experience';
+          });
+          btn.addEventListener('click', () => {
+            selectedStars = i + 1;
+            if (ratingInput) ratingInput.value = selectedStars;
+            highlightStars(selectedStars);
+            if (hintEl) hintEl.textContent = hints[selectedStars];
+          });
+        });
+
+        /* ── FORM SUBMIT → save to Firebase ── */
+        const reviewForm = document.getElementById('reviewForm');
+        const submitBtn = document.getElementById('trSubmitBtn');
+        const submitContent = document.getElementById('tv4SubmitContent');
+        const submitLoading = document.getElementById('tv4SubmitLoading');
+
+        if (reviewForm) {
+          reviewForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reviewerName')?.value.trim();
+            const email = document.getElementById('reviewerEmail')?.value.trim();
+            const company = document.getElementById('reviewerCompany')?.value.trim();
+            const category = document.getElementById('reviewerCategory')?.value || 'other';
+            const review = document.getElementById('reviewText')?.value.trim();
+            const rating = parseInt(document.getElementById('selectedRating')?.value || '0', 10);
+
+            if (!name || !email || !review) {
+              showToast('Please fill in all required fields.', 'error'); return;
+            }
+            if (!rating) {
+              showToast('Please select a star rating.', 'error'); return;
+            }
+
+            // Show loading
+            if (submitContent) submitContent.style.display = 'none';
+            if (submitLoading) submitLoading.style.display = 'flex';
+            if (submitBtn) submitBtn.disabled = true;
+
+            try {
+              // 🔥 Save to Firebase Realtime Database
+              await push(reviewsRef, {
+                name, email, company, category, review, rating,
+                timestamp: serverTimestamp(),
+              });
+
+              // Success UI
+              if (submitBtn) {
+                submitBtn.innerHTML = `
+                  <span style="display:flex;align-items:center;justify-content:center;gap:1rem">
+                    <i class='bx bx-check-circle' style="font-size:2.2rem"></i>
+                    <span>Review Published!</span>
+                  </span>`;
+                submitBtn.style.background = 'linear-gradient(90deg,#16a34a,#15803d)';
+                submitBtn.style.boxShadow = '0 8px 32px rgba(22,163,74,0.45)';
+              }
+              showToast('Thank you! Your review has been saved.', 'success');
+              reviewForm.reset();
+              selectedStars = 0;
+              highlightStars(0);
+              if (hintEl) hintEl.textContent = 'Click to rate your experience';
+
+            } catch (err) {
+              console.error('Firebase write error:', err);
+              if (submitContent) submitContent.style.display = 'flex';
+              if (submitLoading) submitLoading.style.display = 'none';
+              if (submitBtn) submitBtn.disabled = false;
+              showToast('Failed to save review. Please try again.', 'error');
+            }
+          });
+        }
+      });
+    </script>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+     PREMIUM CONTACT SECTION v3
+═══════════════════════════════════════════════════════ -->
+  <section class="contact-section" id="contact">
+
+    <!-- Rich layered background -->
+    <div class="ct-bg">
+      <div class="ct-bg-orb ct-orb-1"></div>
+      <div class="ct-bg-orb ct-orb-2"></div>
+      <div class="ct-bg-orb ct-orb-3"></div>
+      <div class="ct-bg-grid"></div>
+      <div class="ct-bg-lines">
+        <div class="ct-line"></div>
+        <div class="ct-line"></div>
+        <div class="ct-line"></div>
+        <div class="ct-line"></div>
+        <div class="ct-line"></div>
+      </div>
+    </div>
+
+    <!-- Section Header -->
+    <div class="ct-head">
+      <div class="ct-overline">
+        <span class="ct-overline-dot"></span>
+        <span>GET IN TOUCH</span>
+        <span class="ct-overline-dot"></span>
+      </div>
+      <h2 class="section-heading">Let's <span>Work Together</span></h2>
+      <p class="ct-subtitle">May project ka ba o gusto mo lang mag-collaborate? I'm always open — let's build something
+        amazing.</p>
+    </div>
+
+    <!-- Availability Banner -->
+    <div class="ct-availability-bar">
+      <div class="ct-avail-pulse">
+        <span class="ct-pulse-ring"></span>
+        <span class="ct-pulse-dot"></span>
+      </div>
+      <span class="ct-avail-text">Currently <strong>Available</strong> for Freelance &amp; Full-time
+        opportunities</span>
+      <a href="project-folder/OCTA_Resume_Final.pdf" download class="ct-avail-cta">
+        <i class='bx bxs-download'></i> Download CV
+      </a>
+    </div>
+
+    <!-- Main 2-column grid -->
+    <div class="ct-main-grid">
+
+      <!-- LEFT PANEL -->
+      <div class="ct-left-panel">
+
+        <div class="ct-profile-card">
+          <div class="ct-profile-img-wrap">
+            <img src="imgae/01.jpg" alt="Jay Octa" class="ct-profile-img">
+            <div class="ct-profile-ring ct-ring-spin"></div>
+            <div class="ct-profile-status">
+              <span class="ct-status-dot"></span>
+              <span>Online</span>
+            </div>
+          </div>
+          <h3 class="ct-profile-name">Jay Villalon Octa</h3>
+          <p class="ct-profile-role">Full Stack Developer <span class="ct-role-amp">&amp;</span> UI/UX Designer</p>
+          <p class="ct-profile-tagline">"Turning ideas into polished digital products — one commit at a time."</p>
+          <div class="ct-social-row">
+            <a href="https://github.com/JVOR3" target="_blank" class="ct-social-link" data-tooltip="GitHub"><i
+                class='bx bxl-github'></i></a>
+            <a href="https://www.facebook.com/jay.a.octa.2025" target="_blank" class="ct-social-link"
+              data-tooltip="Facebook"><i class='bx bxl-facebook'></i></a>
+            <a href="#" class="ct-social-link" data-tooltip="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a href="#" class="ct-social-link" data-tooltip="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="ct-social-link" data-tooltip="Twitter / X"><i class='bx bxl-twitter'></i></a>
+          </div>
+        </div>
+
+        <div class="ct-info-cards">
+          <div class="ct-info-card">
+            <div class="ct-info-icon"><i class='bx bx-envelope'></i></div>
+            <div class="ct-info-content">
+              <span class="ct-info-label">Email Me At</span>
+              <a href="/cdn-cgi/l/email-protection#aac0dcd8c5c9decbeacdc7cbc3c684c9c5c7" class="ct-info-value"><span
+                  class="__cf_email__"
+                  data-cfemail="204a56524f43544160474d41494c0e434f4d">octajose1032003@gamil.com</span></a>
+            </div>
+            <button class="ct-copy-btn" data-copy="jvrocta@gmail.com" title="Copy email"><i
+                class='bx bx-copy'></i></button>
+          </div>
+          <div class="ct-info-card">
+            <div class="ct-info-icon"><i class='bx bx-map-pin'></i></div>
+            <div class="ct-info-content">
+              <span class="ct-info-label">Based In</span>
+              <span class="ct-info-value">Capalonga, Camarines Norte &#127477;&#127469;</span>
+            </div>
+          </div>
+          <div class="ct-info-card">
+            <div class="ct-info-icon"><i class='bx bx-time-five'></i></div>
+            <div class="ct-info-content">
+              <span class="ct-info-label">Response Time</span>
+              <span class="ct-info-value">Within 24 hours</span>
+            </div>
+          </div>
+          <div class="ct-info-card">
+            <div class="ct-info-icon"><i class='bx bx-globe'></i></div>
+            <div class="ct-info-content">
+              <span class="ct-info-label">Work Mode</span>
+              <span class="ct-info-value">Remote / On-site (PH)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-services-chips">
+          <p class="ct-chips-label">What I can help you with:</p>
+          <div class="ct-chips-row">
+            <span class="ct-chip"><i class='bx bx-code-alt'></i>Web Dev</span>
+            <span class="ct-chip"><i class='bx bx-palette'></i>UI/UX</span>
+            <span class="ct-chip"><i class='bx bx-video'></i>Video</span>
+            <span class="ct-chip"><i class='bx bx-mobile-alt'></i>Responsive</span>
+            <span class="ct-chip"><i class='bx bx-store'></i>Landing Pages</span>
+            <span class="ct-chip"><i class='bx bxl-figma'></i>Prototyping</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="ct-right-panel">
+
+        <div class="ct-form-header">
+          <div class="ct-form-header-icon"><i class='bx bx-message-rounded-dots'></i></div>
+          <div>
+            <h3>Send a Message</h3>
+            <p>I'll get back to you within 24 hours.</p>
+          </div>
+          <div class="ct-live-time" id="ctLiveClock">
+            <i class='bx bx-time'></i>
+            <span id="ctClockText">--:--</span>
+            <span class="ct-tz">PHT</span>
+          </div>
+        </div>
+
+        <div class="ct-quick-select">
+          <p class="ct-qs-label">Quick Project Type:</p>
+          <div class="ct-qs-btns">
+            <button type="button" class="ct-qs-btn" data-subject="Web Development Project"><i
+                class='bx bx-code-alt'></i> Web Dev</button>
+            <button type="button" class="ct-qs-btn" data-subject="UI/UX Design Project"><i class='bx bx-palette'></i>
+              Design</button>
+            <button type="button" class="ct-qs-btn" data-subject="Video Editing Project"><i class='bx bx-video'></i>
+              Video</button>
+            <button type="button" class="ct-qs-btn" data-subject="General Collaboration"><i class='bx bx-link'></i>
+              Collab</button>
+            <button type="button" class="ct-qs-btn" data-subject="General Inquiry"><i class='bx bx-question-mark'></i>
+              Other</button>
+          </div>
+        </div>
+
+        <form id="contactForm" class="ct-form" novalidate>
+
+          <div class="ct-form-row">
+            <div class="ct-form-group">
+              <label for="cf-name"><i class='bx bx-user'></i> Full Name <em>*</em></label>
+              <div class="ct-input-shell">
+                <input type="text" id="cf-name" name="from_name" placeholder="Juan Dela Cruz" required
+                  autocomplete="name">
+                <span class="ct-input-focus-line"></span>
+              </div>
+              <span class="ct-field-error" id="err-name">Please enter your name</span>
+            </div>
+            <div class="ct-form-group">
+              <label for="cf-email"><i class='bx bx-envelope'></i> Email Address <em>*</em></label>
+              <div class="ct-input-shell">
+                <input type="email" id="cf-email" name="from_email" placeholder="juan@email.com" required
+                  autocomplete="email">
+                <span class="ct-input-focus-line"></span>
+              </div>
+              <span class="ct-field-error" id="err-email">Please enter a valid email</span>
+            </div>
+          </div>
+
+          <div class="ct-form-row">
+            <div class="ct-form-group">
+              <label for="cf-phone"><i class='bx bx-phone'></i> Phone (Optional)</label>
+              <div class="ct-input-shell">
+                <input type="tel" id="cf-phone" name="phone" placeholder="+63 9XX XXX XXXX" autocomplete="tel">
+                <span class="ct-input-focus-line"></span>
+              </div>
+            </div>
+            <div class="ct-form-group">
+              <label for="cf-budget"><i class='bx bx-money'></i> Budget Range</label>
+              <div class="ct-input-shell ct-input-shell--sel">
+                <select id="cf-budget" name="budget">
+                  <option value="">Select budget range...</option>
+                  <option value="Under &#8369;5,000">Under &#8369;5,000</option>
+                  <option value="&#8369;5,000 – &#8369;15,000">&#8369;5,000 – &#8369;15,000</option>
+                  <option value="&#8369;15,000 – &#8369;30,000">&#8369;15,000 – &#8369;30,000</option>
+                  <option value="&#8369;30,000+">&#8369;30,000+</option>
+                  <option value="Let's Discuss">Let's Discuss</option>
+                </select>
+                <span class="ct-input-focus-line"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ct-form-group">
+            <label for="cf-subject"><i class='bx bx-tag'></i> Subject <em>*</em></label>
+            <div class="ct-input-shell">
+              <input type="text" id="cf-subject" name="subject" placeholder="Project Inquiry / Collaboration..."
+                required>
+              <span class="ct-input-focus-line"></span>
+            </div>
+            <span class="ct-field-error" id="err-subject">Please enter a subject</span>
+          </div>
+
+          <div class="ct-form-group">
+            <label for="cf-message"><i class='bx bx-message-square-detail'></i> Message <em>*</em></label>
+            <div class="ct-input-shell ct-input-shell--ta">
+              <textarea id="cf-message" name="message" rows="6"
+                placeholder="Tell me about your project — what are you building, what's your timeline, and how can I help?"
+                required></textarea>
+              <span class="ct-input-focus-line"></span>
+              <span class="ct-char-count"><span id="ctCharCount">0</span> / 1000</span>
+            </div>
+            <span class="ct-field-error" id="err-message">Please enter your message</span>
+          </div>
+
+          <input type="text" name="ct_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="ct-submit-btn" id="submitBtn">
+            <span class="ct-submit-default"><i class='bx bx-send'></i><span>Send Message</span></span>
+            <span class="ct-submit-sending" style="display:none"><i
+                class='bx bx-loader-alt bx-spin'></i><span>Sending...</span></span>
+            <span class="ct-submit-done" style="display:none"><i class='bx bx-check-circle'></i><span>Message
+                Sent!</span></span>
+            <div class="ct-btn-shine"></div>
+          </button>
+
+          <div class="ct-trust-row">
+            <span class="ct-trust-item"><i class='bx bx-lock'></i> Private &amp; Secure</span>
+            <span class="ct-trust-item"><i class='bx bx-time'></i> Reply in 24hrs</span>
+            <span class="ct-trust-item"><i class='bx bx-shield-check'></i> No Spam</span>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- Map Section — Ultra Premium v2 -->
+    <div class="ct-map-section adv-map-section">
+
+      <!-- Decorative ambient glows behind map -->
+      <div class="adv-map-ambient">
+        <div class="adv-amb-blob adv-amb-1"></div>
+        <div class="adv-amb-blob adv-amb-2"></div>
+        <div class="adv-amb-blob adv-amb-3"></div>
+      </div>
+
+      <!-- Section Label -->
+      <div class="adv-map-eyebrow">
+        <div class="adv-map-eyebrow-line"></div>
+        <span><i class='bx bx-radar'></i> LOCATION INTEL</span>
+        <div class="adv-map-eyebrow-line"></div>
+      </div>
+
+      <!-- Header row -->
+      <div class="adv-map-header">
+        <div class="adv-map-title-col">
+          <h3 class="adv-map-title">Find Me <em>Anywhere</em> —<br><span>Work with Me Worldwide.</span></h3>
+          <p class="adv-map-desc">Based in <strong>Capalonga, Camarines Norte, PH</strong> — but my work has no borders.
+            I collaborate remotely with clients across the globe.</p>
+        </div>
+        <div class="adv-map-stat-strip">
+          <div class="adv-map-stat">
+            <i class='bx bx-world'></i>
+            <div>
+              <span class="adv-ms-val">Remote</span>
+              <span class="adv-ms-lbl">Work Mode</span>
+            </div>
+          </div>
+          <div class="adv-map-stat-div"></div>
+          <div class="adv-map-stat">
+            <i class='bx bx-time-five'></i>
+            <div>
+              <span class="adv-ms-val">UTC +8</span>
+              <span class="adv-ms-lbl">Timezone</span>
+            </div>
+          </div>
+          <div class="adv-map-stat-div"></div>
+          <div class="adv-map-stat">
+            <i class='bx bx-signal-5'></i>
+            <div>
+              <span class="adv-ms-val adv-ms-green">Online</span>
+              <span class="adv-ms-lbl">Status</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main map + sidebar layout -->
+      <div class="adv-map-body">
+
+        <!-- Left sidebar: coordinate & info cards -->
+        <aside class="adv-map-sidebar">
+
+          <!-- HUD-style coordinate display -->
+          <div class="adv-map-hud">
+            <div class="adv-hud-header">
+              <span class="adv-hud-dot"></span>
+              <span>COORDINATES</span>
+              <span class="adv-hud-scan"></span>
+            </div>
+            <div class="adv-hud-coord">
+              <span class="adv-hud-axis">LAT</span>
+              <span class="adv-hud-val" id="advLatVal">14.2895° N</span>
+            </div>
+            <div class="adv-hud-coord">
+              <span class="adv-hud-axis">LNG</span>
+              <span class="adv-hud-val" id="advLngVal">122.4752° E</span>
+            </div>
+            <div class="adv-hud-divider"></div>
+            <div class="adv-hud-coord">
+              <span class="adv-hud-axis">TZ</span>
+              <span class="adv-hud-val">PHT / UTC+8</span>
+            </div>
+            <div class="adv-hud-coord">
+              <span class="adv-hud-axis">TIME</span>
+              <span class="adv-hud-val adv-hud-clock" id="advHudClock">--:--:--</span>
+            </div>
+          </div>
+
+          <!-- Location info stack -->
+          <div class="adv-map-info-stack">
+            <div class="adv-info-row">
+              <div class="adv-info-icon"><i class='bx bxs-map-pin'></i></div>
+              <div>
+                <span class="adv-info-label">Address</span>
+                <span class="adv-info-val">Capalonga, Camarines Norte</span>
+              </div>
+            </div>
+            <div class="adv-info-row">
+              <div class="adv-info-icon"><i class='bx bx-flag'></i></div>
+              <div>
+                <span class="adv-info-label">Country</span>
+                <span class="adv-info-val">Philippines 🇵🇭</span>
+              </div>
+            </div>
+            <div class="adv-info-row">
+              <div class="adv-info-icon"><i class='bx bx-network-chart'></i></div>
+              <div>
+                <span class="adv-info-label">Work Scope</span>
+                <span class="adv-info-val">Local + International</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Availability card -->
+          <div class="adv-avail-card">
+            <div class="adv-avail-pulse-ring"></div>
+            <div class="adv-avail-pulse-dot"></div>
+            <div class="adv-avail-text">
+              <strong>Currently Available</strong>
+              <span>Open to new projects</span>
+            </div>
+            <a href="#contact" class="adv-avail-btn"><i class='bx bx-send'></i> Hire Me</a>
+          </div>
+
+          <!-- Map controls -->
+          <div class="adv-map-controls">
+            <button class="adv-ctrl-btn adv-ctrl-active" id="advMapStreet" title="Street View">
+              <i class='bx bx-map'></i><span>Map</span>
+            </button>
+            <button class="adv-ctrl-btn" id="advMapSat" title="Satellite View">
+              <i class='bx bx-satellite'></i><span>Satellite</span>
+            </button>
+            <a href="https://maps.google.com/?q=14.2895,122.4752" target="_blank" class="adv-ctrl-btn"
+              title="Open in Google Maps">
+              <i class='bx bx-link-external'></i><span>Open</span>
+            </a>
+          </div>
+
+        </aside>
+
+        <!-- Map frame -->
+        <div class="adv-map-frame" id="advMapFrame">
+
+          <!-- Scanning animation overlay (decorative) -->
+          <div class="adv-map-scan-line"></div>
+
+          <!-- Top-left badge -->
+          <div class="adv-map-badge adv-badge-tl">
+            <i class='bx bxs-map-pin'></i>
+            <span>JVOR DEV. — Capalonga, PH</span>
+          </div>
+
+          <!-- Top-right: live time -->
+          <div class="adv-map-badge adv-badge-tr">
+            <i class='bx bx-time'></i>
+            <span id="advMapClock">--:-- PHT</span>
+          </div>
+
+          <!-- Corner accents -->
+          <div class="adv-corner adv-c-tl"></div>
+          <div class="adv-corner adv-c-tr"></div>
+          <div class="adv-corner adv-c-bl"></div>
+          <div class="adv-corner adv-c-br"></div>
+
+          <!-- Crosshair pulse center -->
+          <div class="adv-map-crosshair">
+            <div class="adv-ch-ring adv-ch-r1"></div>
+            <div class="adv-ch-ring adv-ch-r2"></div>
+            <div class="adv-ch-ring adv-ch-r3"></div>
+            <div class="adv-ch-dot"></div>
+          </div>
+
+          <!-- Bottom-right availability pill -->
+          <div class="adv-map-avail-pill">
+            <span class="adv-avail-dot-sm"></span>
+            <span>Available for Remote Work</span>
+          </div>
+
+          <!-- The actual map iframe -->
+          <iframe id="advMapIframe"
+            src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d591.5354937899773!2d122.4751619!3d14.2895336!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDE3JzIzLjEiTiAxMjLCsDI4JzMxLjkiRQ!5e1!3m2!1sen!2sph!4v1773758842321!5m2!1sen!2sph"
+            width="100%" height="100%"
+            style="border:0;display:block;filter:saturate(0.75) contrast(1.1) brightness(0.9);" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+
+        </div><!-- end adv-map-frame -->
+
+      </div><!-- end adv-map-body -->
+
+      <!-- Bottom strip: reach me globally -->
+      <div class="adv-map-bottom-strip">
+        <div class="adv-mbs-left">
+          <i class='bx bx-globe'></i>
+          <span>Open to collaborating with clients from <strong>any country</strong> — I work fully remote.</span>
+        </div>
+        <div class="adv-mbs-right">
+          <a href="mailto:jvrocta@gmail.com" class="adv-mbs-btn"><i class='bx bx-envelope'></i>
+            octajose1032003@gamil.com</a>
+          <a href="https://m.me/jay.a.octa.2025" target="_blank" class="adv-mbs-btn adv-mbs-btn--fb"><i
+              class='bx bxl-messenger'></i> Message Me</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Toasts -->
+    <div id="ct-success-toast" class="ct-toast ct-toast--success">
+      <div class="ct-toast-icon"><i class='bx bx-check-circle'></i></div>
+      <div class="ct-toast-body"><strong>Message Sent! &#127881;</strong><span>I'll get back to you within 24 hours.
+          Salamat!</span></div>
+      <button class="ct-toast-close" id="ctToastClose"><i class='bx bx-x'></i></button>
+    </div>
+    <div id="ct-error-toast" class="ct-toast ct-toast--error">
+      <div class="ct-toast-icon"><i class='bx bx-error-circle'></i></div>
+      <div class="ct-toast-body"><strong>Oops! Something went wrong.</strong><span>Please try again or email me
+          directly.</span></div>
+      <button class="ct-toast-close" id="ctErrToastClose"><i class='bx bx-x'></i></button>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+     PREMIUM FOOTER v3
+═══════════════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+
+    <!-- Animated background -->
+    <div class="ft-bg">
+      <div class="ft-bg-orb ft-orb-1"></div>
+      <div class="ft-bg-orb ft-orb-2"></div>
+      <div class="ft-bg-grid"></div>
+      <div class="ft-top-border"></div>
+    </div>
+
+    <!-- ── Pre-footer CTA Banner ── -->
+    <div class="ft-cta-banner">
+      <div class="ft-cta-content">
+        <div class="ft-cta-text">
+          <h3>Ready to Start a Project?</h3>
+          <p>Let's collaborate and turn your vision into reality.</p>
+        </div>
+        <div class="ft-cta-actions">
+          <a href="#contact" class="ft-cta-btn ft-cta-primary">
+            <i class='bx bx-send'></i> Hire Me Now
+          </a>
+          <a href="project-folder/OCTA_Resume_Final.pdf" download class="ft-cta-btn ft-cta-ghost">
+            <i class='bx bxs-download'></i> Download CV
+          </a>
+        </div>
+      </div>
+      <div class="ft-cta-stats">
+        <div class="ft-mini-stat">
+          <span class="ft-ms-num">5+</span>
+          <span class="ft-ms-lbl">Projects</span>
+        </div>
+        <div class="ft-ms-div"></div>
+        <div class="ft-mini-stat">
+          <span class="ft-ms-num">3+</span>
+          <span class="ft-ms-lbl">Clients</span>
+        </div>
+        <div class="ft-ms-div"></div>
+        <div class="ft-mini-stat">
+          <span class="ft-ms-num">100%</span>
+          <span class="ft-ms-lbl">Satisfaction</span>
+        </div>
+        <div class="ft-ms-div"></div>
+        <div class="ft-mini-stat">
+          <span class="ft-ms-num">5★</span>
+          <span class="ft-ms-lbl">Rating</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Main Footer Grid ── -->
+    <div class="ft-main">
+
+      <!-- Brand Column -->
+      <div class="ft-col ft-col-brand">
+        <a href="#home" class="ft-logo">JVOR <span>DEV.</span></a>
+        <p class="ft-brand-bio">
+          Full Stack Developer &amp; UI/UX Designer based in the Philippines. Building modern, fast, and user-centric
+          digital experiences with passion and precision.
+        </p>
+
+        <!-- Status badge -->
+        <div class="ft-status-badge">
+          <span class="ft-status-dot"></span>
+          <span>Available for new projects</span>
+        </div>
+
+        <!-- Social icons -->
+        <div class="ft-social-icons">
+          <a href="https://github.com/JVOR3" target="_blank" class="ft-social" data-tooltip="GitHub">
+            <i class='bx bxl-github'></i>
+          </a>
+          <a href="https://www.facebook.com/jay.a.octa.2025" target="_blank" class="ft-social" data-tooltip="Facebook">
+            <i class='bx bxl-facebook'></i>
+          </a>
+          <a href="#" class="ft-social" data-tooltip="LinkedIn">
+            <i class='bx bxl-linkedin'></i>
+          </a>
+          <a href="https://www.instagram.com/jvor3?igsh=MXRpaDZ0ZnlnMWhweA==" class="ft-social"
+            data-tooltip="Instagram">
+            <i class='bx bxl-instagram'></i>
+          </a>
+          <a href="#" class="ft-social" data-tooltip="Twitter / X">
+            <i class='bx bxl-twitter'></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Column -->
+      <div class="ft-col">
+        <h4 class="ft-col-title">Navigation</h4>
+        <ul class="ft-links">
+          <li><a href="#home"><i class='bx bx-home'></i> Home</a></li>
+          <li><a href="#about"><i class='bx bx-user'></i> About</a></li>
+          <li><a href="#certificates"><i class='bx bxs-award'></i> Certificates</a></li>
+          <li><a href="#tech-skills"><i class='bx bx-code-alt'></i> Skills</a></li>
+          <li><a href="#services"><i class='bx bx-briefcase'></i> Services</a></li>
+          <li><a href="#projects"><i class='bx bx-folder-open'></i> Projects</a></li>
+          <li><a href="#creative-samples"><i class='bx bx-palette'></i> Creatives</a></li>
+          <li><a href="#testimonials"><i class='bx bx-star'></i> Reviews</a></li>
+          <li><a href="#contact"><i class='bx bx-envelope'></i> Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services Column -->
+      <div class="ft-col">
+        <h4 class="ft-col-title">Services</h4>
+        <ul class="ft-links">
+          <li><a href="#services"><i class='bx bx-globe'></i> Web Development</a></li>
+          <li><a href="#services"><i class='bx bx-palette'></i> UI/UX Design</a></li>
+          <li><a href="#services"><i class='bx bx-video'></i> Video Editing</a></li>
+          <li><a href="#services"><i class='bx bx-mobile-alt'></i> Responsive Design</a></li>
+          <li><a href="#services"><i class='bx bx-store'></i> Landing Pages</a></li>
+          <li><a href="#services"><i class='bx bxl-figma'></i> Prototyping</a></li>
+          <li><a href="#services"><i class='bx bx-search-alt'></i> SEO Optimization</a></li>
+        </ul>
+      </div>
+
+      <!-- Tech Stack Column -->
+      <div class="ft-col">
+        <h4 class="ft-col-title">Tech Stack</h4>
+        <div class="ft-tech-chips">
+          <span class="ft-tech"><i class='bx bxl-html5'></i>HTML5</span>
+          <span class="ft-tech"><i class='bx bxl-css3'></i>CSS3</span>
+          <span class="ft-tech"><i class='bx bxl-javascript'></i>JavaScript</span>
+          <span class="ft-tech"><i class='bx bxl-react'></i>React</span>
+          <span class="ft-tech"><i class='bx bxl-nodejs'></i>Node.js</span>
+          <span class="ft-tech"><i class='bx bxl-python'></i>Python</span>
+          <span class="ft-tech"><i class='bx bxl-mongodb'></i>MongoDB</span>
+          <span class="ft-tech"><i class='bx bxl-figma'></i>Figma</span>
+          <span class="ft-tech"><i class='bx bxl-git'></i>Git</span>
+          <span class="ft-tech"><i class='bx bxl-firebase'></i>Firebase</span>
+        </div>
+
+        <!-- Contact quick info -->
+        <div class="ft-contact-quick">
+          <a href="/cdn-cgi/l/email-protection#f8928e8a979b8c99b89f95999194d69b9795" class="ft-contact-q">
+            <i class='bx bx-envelope'></i>
+            <span><span class="__cf_email__"
+                data-cfemail="a0cad6d2cfc3d4c1e0c7cdc1c9cc8ec3cfcd">octajose1032003@gamil.com</span></span>
+          </a>
+          <div class="ft-contact-q">
+            <i class='bx bx-map-pin'></i>
+            <span>Capalonga, Camarines Norte</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Divider with scroll-to-top ── -->
+    <div class="ft-divider">
+      <div class="ft-divider-line"></div>
+      <button class="ft-scroll-top" id="ftScrollTop" title="Back to top">
+        <i class='bx bx-chevron-up'></i>
+      </button>
+      <div class="ft-divider-line"></div>
+    </div>
+
+    <!-- ── Bottom Bar ── -->
+    <div class="ft-bottom">
+      <div class="ft-bottom-left">
+        <p class="ft-copyright">
+          <span class="ft-year-display">&copy2025</span> <strong>JVOR DEV.</strong> — All rights reserved.
+        </p>
+        <p class="ft-made-with">
+          Made with <span class="ft-heart">&#10084;</span> &amp; <span class="ft-coffee">&#9749;</span> in the
+          Philippines
+        </p>
+      </div>
+
+      <div class="ft-bottom-center">
+        <!-- Live visitor counter -->
+        <div class="ft-visitor-badge">
+          <i class='bx bx-show'></i>
+          <span id="ftVisitCount">--</span> visitors today
+        </div>
+      </div>
+
+      <div class="ft-bottom-right">
+        <a href="#" class="ft-legal-link">Privacy Policy</a>
+        <span class="ft-legal-sep">·</span>
+        <a href="#" class="ft-legal-link">Terms</a>
+        <span class="ft-legal-sep">·</span>
+        <a href="#" class="ft-legal-link">Sitemap</a>
+      </div>
+    </div>
+
+    <!-- ── Version tag ── -->
+    <div class="ft-version-tag">
+      <span>v3.0 — Portfolio 2025</span>
+      <span class="ft-version-dot"></span>
+    </div>
+
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+     HIRE ME MODAL — JVOR DEV.
+═══════════════════════════════════════════════════════ -->
+  <div id="hireMeModal" class="hm-overlay" role="dialog" aria-modal="true" aria-labelledby="hm-title">
+    <div class="hm-backdrop"></div>
+    <div class="hm-panel">
+
+      <div class="hm-orb hm-orb-1"></div>
+      <div class="hm-orb hm-orb-2"></div>
+
+      <button class="hm-close" id="closeHireModal" aria-label="Close"><i class="bx bx-x"></i></button>
+
+      <div class="hm-header">
+        <div class="hm-avatar-wrap">
+          <img src="imgae/pormalko.jpg" alt="Jay Octa" class="hm-avatar">
+          <span class="hm-avail-badge"><span class="hm-avail-pulse"></span>Available Now</span>
+        </div>
+        <div class="hm-header-info">
+          <span class="hm-eyebrow">Ready to work with you</span>
+          <h2 class="hm-name" id="hm-title">JVOR DEV.</h2>
+          <p class="hm-role">Full Stack Developer &amp; UI/UX Designer</p>
+          <div class="hm-tags">
+            <span class="hm-tag"><i class="bx bx-map-pin"></i> Capalonga, PH</span>
+            <span class="hm-tag"><i class="bx bx-time"></i> PHT (UTC+8)</span>
+            <span class="hm-tag"><i class="bx bx-globe"></i> Remote Friendly</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hm-section">
+        <p class="hm-section-label"><i class="bx bx-layer"></i> What I Offer</p>
+        <div class="hm-services">
+          <div class="hm-service-card"><i class="bx bx-code-alt"></i><span>Web Development</span></div>
+          <div class="hm-service-card"><i class="bx bx-palette"></i><span>UI/UX Design</span></div>
+          <div class="hm-service-card"><i class="bx bx-mobile-alt"></i><span>Responsive Design</span></div>
+          <div class="hm-service-card"><i class="bx bx-video"></i><span>Video Editing</span></div>
+          <div class="hm-service-card"><i class="bx bx-store"></i><span>Landing Pages</span></div>
+          <div class="hm-service-card"><i class="bx bxl-figma"></i><span>Prototyping</span></div>
+        </div>
+      </div>
+
+      <div class="hm-stats-row">
+        <div class="hm-stat"><span class="hm-stat-n">5+</span><span class="hm-stat-l">Projects Done</span></div>
+        <div class="hm-stat-div"></div>
+        <div class="hm-stat"><span class="hm-stat-n">3+</span><span class="hm-stat-l">Happy Clients</span></div>
+        <div class="hm-stat-div"></div>
+        <div class="hm-stat"><span class="hm-stat-n">100%</span><span class="hm-stat-l">Satisfaction</span></div>
+        <div class="hm-stat-div"></div>
+        <div class="hm-stat"><span class="hm-stat-n">&lt;24h</span><span class="hm-stat-l">Response Time</span></div>
+      </div>
+
+      <div class="hm-section">
+        <p class="hm-section-label"><i class="bx bx-send"></i> Reach Me Via</p>
+        <div class="hm-contact-options">
+          <button class="hm-contact-btn hm-copy-email" data-email="octa1032003@gmail.com">
+            <div class="hm-cb-icon"><i class="bx bx-envelope"></i></div>
+            <div class="hm-cb-info"><span class="hm-cb-label">Email</span><span class="hm-cb-val"><a
+                  href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                  data-cfemail="422834302d21362302252f232b2e6c212d2f">[email&#160;protected</a></span></div>
+            <div class="hm-cb-action"><i class="bx bx-copy"></i><span>Copy</span></div>
+          </button>
+          <a class="hm-contact-btn" href="https://m.me/jay.a.octa.2025" target="_blank" rel="noopener">
+            <div class="hm-cb-icon hm-fb"><i class="bx bxl-messenger"></i></div>
+            <div class="hm-cb-info"><span class="hm-cb-label">Facebook Messenger</span><span
+                class="hm-cb-val">jay.a.octa.2025</span></div>
+            <div class="hm-cb-action"><i class="bx bx-link-external"></i><span>Open</span></div>
+          </a>
+          <a class="hm-contact-btn" href="https://github.com/JVOR3" target="_blank" rel="noopener">
+            <div class="hm-cb-icon hm-gh"><i class="bx bxl-github"></i></div>
+            <div class="hm-cb-info"><span class="hm-cb-label">GitHub</span><span
+                class="hm-cb-val">github.com/JVOR3</span></div>
+            <div class="hm-cb-action"><i class="bx bx-link-external"></i><span>View</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="hm-footer">
+        <a href="#contact" class="hm-cta-btn" id="hm-go-contact">
+          <i class="bx bx-message-square-dots"></i>
+          Send Me a Project Brief
+        </a>
+        <div class="hm-footer-row">
+          <span class="hm-footer-or">or</span>
+          <a href="project-folder/OCTA_Resume_Final.pdf" download class="hm-cta-ghost">
+            <i class="bx bxs-file-pdf"></i> Download My CV
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hm-toast" id="hmCopyToast"><i class="bx bx-check-circle"></i> Email copied to clipboard!</div>
+
+
+  <script>
+    // ===== NAVBAR INSTANT VISIBILITY FIX =====
+    // Prevents any late/delayed animation on the header
+    document.addEventListener('DOMContentLoaded', function () {
+      const header = document.querySelector('.header');
+      if (header) {
+        header.style.opacity = '1';
+        header.style.transform = 'none';
+        header.style.visibility = 'visible';
+        header.style.animation = 'none';
+      }
+      // Scrolled state toggle
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 60) {
+          header && header.classList.add('scrolled');
+        } else {
+          header && header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+    });
+  </script>
+  <script type="module" src="script.js"></script>
+  <script src="fixes.js"></script>
+  <script src="enhancements.js"></script>
+  <!-- testimonials-upgrade.js replaced by embedded tv4 script -->
+  <!-- ✅ CONTACT FIX: Single clean EmailJS handler (replaces 3 conflicting handlers in script.js) -->
+  <script src="contact-fix.js"></script>
+
+  <!-- Service Worker Registration for Offline Mode -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('✅ Service Worker registered:', reg.scope))
+          .catch(err => console.warn('SW registration failed:', err));
+      });
+    }
+  </script>
+
+  <script>
+    // ===== PAGE LOADER DISMISS =====
+    (function () {
+      const loader = document.getElementById('page-loader');
+      if (!loader) return;
+      function dismissLoader() {
+        loader.classList.add('loader-done');
+        setTimeout(() => { loader.style.display = 'none'; }, 700);
+      }
+      // Dismiss after page loads OR after 2.5s max
+      window.addEventListener('load', () => setTimeout(dismissLoader, 400));
+      setTimeout(dismissLoader, 2500);
+    })();
+  </script>
+
+</body>
+
+</html>
