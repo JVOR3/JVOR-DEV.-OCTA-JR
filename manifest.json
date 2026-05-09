@@ -1,0 +1,50 @@
+{
+  "name": "JVOR DEV — Portfolio",
+  "short_name": "JVOR DEV",
+  "description": "Portfolio of Jose Jr. Villalon Octa — Full Stack Developer & UI/UX Designer based in Capalonga, Camarines Norte.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#ea580c",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "developer", "design"],
+  "lang": "en-PH",
+  "icons": [
+    {
+      "src": "imgae/01.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "imgae/01.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "imgae/01.jpg",
+      "sizes": "540x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact JVOR",
+      "short_name": "Contact",
+      "description": "Jump to the contact section",
+      "url": "/index.html#contact",
+      "icons": [{ "src": "imgae/01.jpg", "sizes": "96x96" }]
+    },
+    {
+      "name": "View Projects",
+      "short_name": "Projects",
+      "description": "Browse JVOR's featured projects",
+      "url": "/index.html#projects",
+      "icons": [{ "src": "imgae/01.jpg", "sizes": "96x96" }]
+    }
+  ]
+}

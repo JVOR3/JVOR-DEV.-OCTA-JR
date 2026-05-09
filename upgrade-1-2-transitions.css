@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════════════════════════
+   UPGRADE 1 & 2 — TRANSITIONS.CSS v3 — JVOR DEV PORTFOLIO
+   1. Theme Ripple — smooth canvas ink bleed from toggle
+   2. Section Transitions — clean fade + slide (no orange flash)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════
+   1. THEME TRANSITION
+══════════════════════════════════════════════ */
+
+#theme-ripple-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+body.theme-in-transition,
+body.theme-in-transition * {
+  transition:
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease !important;
+}
+
+body.theme-in-transition canvas,
+body.theme-in-transition video,
+body.theme-in-transition img,
+body.theme-in-transition svg {
+  transition: none !important;
+}
+
+.theme-toggle {
+  position: relative;
+}
+
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 0px rgba(234, 88, 12, 0);
+  transition: box-shadow 0.3s ease;
+  pointer-events: none;
+}
+
+.theme-toggle.tt-active::after {
+  animation: ttRingFade 0.5s ease forwards;
+}
+
+@keyframes ttRingFade {
+  0%   { box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.45); }
+  100% { box-shadow: 0 0 0 10px rgba(234, 88, 12, 0); }
+}
+
+/* ══════════════════════════════════════════════
+   2. SECTION TRANSITIONS — clean fade + slide
+   No orange flash. No full-screen overlay.
+   Just a subtle, professional directional fade.
+══════════════════════════════════════════════ */
+
+/*
+  A slim, neutral progress indicator at the top.
+  Very subtle — no color pulse, just a clean line.
+*/
+#nav-line {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  z-index: 9001;
+  background: linear-gradient(90deg, transparent, rgba(234,88,12,0.7), rgba(251,146,60,0.9), rgba(234,88,12,0.7), transparent);
+  pointer-events: none;
+  opacity: 0;
+}
+
+#nav-line.line-run {
+  animation: navLineRun 0.48s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes navLineRun {
+  0%   { width: 0%;   opacity: 0; }
+  15%  { opacity: 1; }
+  70%  { width: 100%; opacity: 0.85; }
+  100% { width: 100%; opacity: 0; }
+}
+
+/* Removed: #nav-lens (the orange frosted flash overlay — deleted) */
+
+/* Section slide-in reveal */
+section.s-reveal-from-right {
+  animation: sRevealRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+section.s-reveal-from-left {
+  animation: sRevealLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes sRevealRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes sRevealLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Active nav link underline */
+header .navbar a,
+header nav a {
+  position: relative;
+}
+
+header .navbar a.nav-active-anim::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  height: 2px;
+  width: 0%;
+  background: #ea580c;
+  border-radius: 2px;
+  animation: navUnderline 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes navUnderline {
+  to { width: 100%; }
+}
+
+/* Scroll progress bar */
+#scroll-progress-bar {
+  transition: box-shadow 0.3s ease;
+}
+
+#scroll-progress-bar.progress-pop {
+  animation: progressPop 0.4s ease-out forwards;
+}
+
+@keyframes progressPop {
+  0%   { box-shadow: 0 0 10px 3px rgba(234,88,12,0.5); }
+  100% { box-shadow: 0 0 0 0 rgba(234,88,12,0); }
+}

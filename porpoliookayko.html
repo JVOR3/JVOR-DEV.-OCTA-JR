@@ -17,6 +17,20 @@
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="fixes.css">
+  <link rel="stylesheet" href="gallery-fix.css">
+  <link rel="stylesheet" href="skills-redesign.css">
+
+  <!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Upgrade CSS Files -->
+<link rel="stylesheet" href="upgrade-1-2-transitions.css">
+<link rel="stylesheet" href="upgrade-3-pwa.css">
+<link rel="stylesheet" href="upgrade-4-ai-contact.css">
+<link rel="stylesheet" href="upgrade-5-estimator.css">
+<link rel="stylesheet" href="upgrade-6-book-call.css">
+```
+
 
   <link rel="icon" href="imgae/01.jpg" type="image/icon">
 
@@ -4839,6 +4853,7 @@
   </script>
   <script type="module" src="script.js"></script>
   <script src="fixes.js"></script>
+  <script src="skills-redesign.js"></script>
   <script src="enhancements.js"></script>
   <!-- testimonials-upgrade.js replaced by embedded tv4 script -->
   <!-- ✅ CONTACT FIX: Single clean EmailJS handler (replaces 3 conflicting handlers in script.js) -->
@@ -4870,6 +4885,36 @@
     })();
   </script>
 
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('✅ SW registered'))
+        .catch(err => console.warn('SW failed:', err));
+    });
+  }
+</script>
+
+
+<!-- ═══ JVOR UPGRADES ═══ -->
+<!-- 1+2: Theme Ripple + Cinematic Section Transitions -->
+<script src="upgrade-1-2-transitions.js"></script>
+
+<!-- 3: PWA Install Prompt -->
+<script src="upgrade-3-pwa.js"></script>
+
+<!-- 4: AI-Powered Contact Form Suggestions -->
+<script src="upgrade-4-ai-contact.js"></script>
+
+<!-- 5: Project Budget Estimator (auto-injects new section) -->
+<script src="upgrade-5-estimator.js"></script>
+
+<!-- 6: Book a Call Widget (auto-injects button + modal) -->
+<script src="upgrade-6-book-call.js"></script>
+
+<!-- 7: Portfolio PDF Generator (auto-injects download button) -->
+<script src="upgrade-7-pdf.js"></script>
+```
 </body>
 
 </html>
