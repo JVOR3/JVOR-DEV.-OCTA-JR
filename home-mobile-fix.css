@@ -1,0 +1,468 @@
+/* ═══════════════════════════════════════════════════════════
+   HOME-MOBILE-FIX.CSS — JVOR DEV PORTFOLIO
+   Fixes:
+   1. Mobile: orbit/photo goes ON TOP, content below
+   2. Day mode: all text & icons clearly visible
+   3. Orbit: fully responsive, never clips or overlaps
+   4. Animations: scale-aware, no overflow
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────
+   DESKTOP (≥993px) — keep original side-by-side
+   but ensure orbit never overflows viewport
+───────────────────────────────────────────── */
+@media (min-width: 993px) {
+  .home {
+    flex-direction: row !important;
+    overflow: hidden !important;
+  }
+
+  .home-img {
+    flex-shrink: 0 !important;
+  }
+
+  .orbit-container {
+    width: 400px !important;
+    height: 400px !important;
+  }
+
+  .orbit-container::before {
+    width: 380px !important;
+    height: 380px !important;
+  }
+
+  .orbit-icons {
+    width: 380px !important;
+    height: 380px !important;
+  }
+
+  .profile-img {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  /* Reposition 8 icons for 380px orbit ring */
+  .orbit-icons i:nth-child(1) {
+    top: calc(50% - 27px - 190px) !important;
+    left: calc(50% - 27px) !important;
+  }
+  .orbit-icons i:nth-child(2) {
+    top: calc(50% - 27px - 134px) !important;
+    left: calc(50% - 27px + 134px) !important;
+  }
+  .orbit-icons i:nth-child(3) {
+    top: calc(50% - 27px) !important;
+    left: calc(50% - 27px + 190px) !important;
+  }
+  .orbit-icons i:nth-child(4) {
+    top: calc(50% - 27px + 134px) !important;
+    left: calc(50% - 27px + 134px) !important;
+  }
+  .orbit-icons i:nth-child(5) {
+    top: calc(50% - 27px + 190px) !important;
+    left: calc(50% - 27px) !important;
+  }
+  .orbit-icons i:nth-child(6) {
+    top: calc(50% - 27px + 134px) !important;
+    left: calc(50% - 27px - 134px) !important;
+  }
+  .orbit-icons i:nth-child(7) {
+    top: calc(50% - 27px) !important;
+    left: calc(50% - 27px - 190px) !important;
+  }
+  .orbit-icons i:nth-child(8) {
+    top: calc(50% - 27px - 134px) !important;
+    left: calc(50% - 27px - 134px) !important;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   TABLET + MOBILE (≤992px)
+   Layout: orbit/photo on TOP, content below
+───────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .home {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 7rem 1.5rem 4rem !important;
+    gap: 2rem !important;
+    min-height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  /* 📸 IMAGE/ORBIT GOES FIRST (top) */
+  .home-img {
+    order: -1 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 📝 CONTENT GOES SECOND (bottom) */
+  .home-content {
+    order: 1 !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 600px !important;
+  }
+
+  /* ── Orbit sizing for tablet ── */
+  .orbit-container {
+    width: 300px !important;
+    height: 300px !important;
+    margin: 0 auto !important;
+  }
+
+  .orbit-container::before {
+    width: 280px !important;
+    height: 280px !important;
+  }
+
+  .orbit-container::after {
+    width: 210px !important;
+    height: 210px !important;
+  }
+
+  .orbit-icons {
+    width: 280px !important;
+    height: 280px !important;
+  }
+
+  .orbit-icons i {
+    font-size: 1.6rem !important;
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .profile-img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  /* Reposition 8 icons for 280px ring (radius=140) */
+  .orbit-icons i:nth-child(1) {
+    top: calc(50% - 19px - 140px) !important;
+    left: calc(50% - 19px) !important;
+  }
+  .orbit-icons i:nth-child(2) {
+    top: calc(50% - 19px - 99px) !important;
+    left: calc(50% - 19px + 99px) !important;
+  }
+  .orbit-icons i:nth-child(3) {
+    top: calc(50% - 19px) !important;
+    left: calc(50% - 19px + 140px) !important;
+  }
+  .orbit-icons i:nth-child(4) {
+    top: calc(50% - 19px + 99px) !important;
+    left: calc(50% - 19px + 99px) !important;
+  }
+  .orbit-icons i:nth-child(5) {
+    top: calc(50% - 19px + 140px) !important;
+    left: calc(50% - 19px) !important;
+  }
+  .orbit-icons i:nth-child(6) {
+    top: calc(50% - 19px + 99px) !important;
+    left: calc(50% - 19px - 99px) !important;
+  }
+  .orbit-icons i:nth-child(7) {
+    top: calc(50% - 19px) !important;
+    left: calc(50% - 19px - 140px) !important;
+  }
+  .orbit-icons i:nth-child(8) {
+    top: calc(50% - 19px - 99px) !important;
+    left: calc(50% - 19px - 99px) !important;
+  }
+
+  /* ── Float stats row under orbit ── */
+  .home-float-stats {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 0.75rem !important;
+    margin-top: 1rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* ── Text sizing ── */
+  .home-title {
+    font-size: 3.5rem !important;
+    text-align: center !important;
+  }
+
+  .home-content h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .intro-text,
+  .tagline {
+    font-size: 1rem !important;
+  }
+
+  /* ── Button group centered ── */
+  .btn-group {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.75rem !important;
+  }
+
+  /* ── Social icons row centered ── */
+  .social-icons {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* ── Scroll hint hides on mobile ── */
+  .home-scroll-hint {
+    display: none !important;
+  }
+
+  /* ── Code rain canvas — don't overflow ── */
+  #codeRainCanvas {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    opacity: 0.3 !important;
+  }
+
+  /* Make sure content sits above canvas */
+  .home-content,
+  .home-img {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   SMALL MOBILE (≤480px)
+───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .home {
+    padding: 6rem 1rem 3rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .orbit-container {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  .orbit-container::before {
+    width: 224px !important;
+    height: 224px !important;
+  }
+
+  .orbit-container::after {
+    width: 168px !important;
+    height: 168px !important;
+  }
+
+  .orbit-icons {
+    width: 224px !important;
+    height: 224px !important;
+  }
+
+  .orbit-icons i {
+    font-size: 1.3rem !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .profile-img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  /* Reposition 8 icons for 224px ring (radius=112) */
+  .orbit-icons i:nth-child(1) {
+    top: calc(50% - 16px - 112px) !important;
+    left: calc(50% - 16px) !important;
+  }
+  .orbit-icons i:nth-child(2) {
+    top: calc(50% - 16px - 79px) !important;
+    left: calc(50% - 16px + 79px) !important;
+  }
+  .orbit-icons i:nth-child(3) {
+    top: calc(50% - 16px) !important;
+    left: calc(50% - 16px + 112px) !important;
+  }
+  .orbit-icons i:nth-child(4) {
+    top: calc(50% - 16px + 79px) !important;
+    left: calc(50% - 16px + 79px) !important;
+  }
+  .orbit-icons i:nth-child(5) {
+    top: calc(50% - 16px + 112px) !important;
+    left: calc(50% - 16px) !important;
+  }
+  .orbit-icons i:nth-child(6) {
+    top: calc(50% - 16px + 79px) !important;
+    left: calc(50% - 16px - 79px) !important;
+  }
+  .orbit-icons i:nth-child(7) {
+    top: calc(50% - 16px) !important;
+    left: calc(50% - 16px - 112px) !important;
+  }
+  .orbit-icons i:nth-child(8) {
+    top: calc(50% - 16px - 79px) !important;
+    left: calc(50% - 16px - 79px) !important;
+  }
+
+  .home-title {
+    font-size: 2.8rem !important;
+  }
+
+  .home-float-stats {
+    gap: 0.5rem !important;
+  }
+
+  .home-stat-pill {
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DAY MODE (LIGHT MODE) FIXES
+   All text and icons must be clearly visible
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Social icons in light mode ── */
+.light-mode .social-icons a {
+  border-color: var(--main-color) !important;
+  color: var(--main-color) !important;
+  background: rgba(234, 88, 12, 0.06) !important;
+}
+
+.light-mode .social-icons a i {
+  color: var(--main-color) !important;
+}
+
+.light-mode .social-icons a:hover {
+  background: var(--main-color) !important;
+  color: #fff !important;
+  border-color: var(--main-color) !important;
+}
+
+.light-mode .social-icons a:hover i {
+  color: #fff !important;
+}
+
+/* ── Orbit icons in light mode — visible on light bg ── */
+.light-mode .orbit-icons i {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(234, 88, 12, 0.4) !important;
+  color: var(--main-color) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12), 0 0 8px rgba(234,88,12,0.15) !important;
+}
+
+.light-mode .orbit-icons i:hover {
+  background: var(--main-color) !important;
+  color: #fff !important;
+  border-color: var(--main-color) !important;
+}
+
+.light-mode .orbit-container::before {
+  border-color: rgba(234, 88, 12, 0.3) !important;
+}
+
+/* ── Home title in light mode ── */
+.light-mode .home-title {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+/* ── Subtitle/typewriter text ── */
+.light-mode .home-content h3,
+.light-mode .home-content h3 span {
+  color: #334155 !important;
+}
+
+/* ── Intro / tagline paragraph ── */
+.light-mode .intro-text {
+  color: #475569 !important;
+}
+
+.light-mode .tagline {
+  color: var(--main-color) !important;
+  border-left-color: var(--main-color) !important;
+  opacity: 1 !important;
+}
+
+/* ── Stat pills in light mode ── */
+.light-mode .home-stat-pill {
+  background: rgba(255,255,255,0.85) !important;
+  border: 1px solid rgba(234,88,12,0.25) !important;
+  color: #1e293b !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.light-mode .home-stat-pill strong {
+  color: var(--main-color) !important;
+}
+
+.light-mode .home-stat-pill span {
+  color: #475569 !important;
+}
+
+.light-mode .home-stat-pill i {
+  color: var(--main-color) !important;
+}
+
+/* ── Buttons in light mode ── */
+.light-mode .btn {
+  border-color: var(--main-color) !important;
+  color: var(--main-color) !important;
+}
+
+.light-mode .btn:hover {
+  background: var(--main-color) !important;
+  color: #fff !important;
+}
+
+.light-mode .btn-download {
+  background: #0f172a !important;
+  color: #fff !important;
+  border-color: #0f172a !important;
+}
+
+.light-mode .btn-download:hover {
+  background: var(--main-color) !important;
+  border-color: var(--main-color) !important;
+}
+
+/* ── Code rain canvas in light mode — very subtle ── */
+.light-mode #codeRainCanvas {
+  opacity: 0.06 !important;
+}
+
+/* ── Profile img light mode ── */
+.light-mode .profile-img {
+  border-color: rgba(234, 88, 12, 0.45) !important;
+  box-shadow:
+    0 0 0 6px rgba(234, 88, 12, 0.06),
+    0 0 32px rgba(234, 88, 12, 0.2),
+    0 16px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ── Hire me availability dot ── */
+.light-mode .hire-avail-dot {
+  background: #22c55e !important;
+}
+
+/* ── Scroll hint ── */
+.light-mode .home-scroll-hint span {
+  color: #64748b !important;
+}
+
+.light-mode .scroll-mouse {
+  border-color: #64748b !important;
+}
