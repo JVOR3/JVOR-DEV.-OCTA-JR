@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ff6b1a"/>
+      <stop offset="50%"  stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="35%" cy="30%" r="60%">
+      <stop offset="0%"   stop-color="#ff9f1c" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffe4cc"/>
+    </linearGradient>
+    <linearGradient id="dotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#fff5ee"/>
+      <stop offset="100%" stop-color="#ffba7a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Full bleed background (maskable — no rounded corners) -->
+  <rect x="0" y="0" width="512" height="512" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="512" height="512" fill="url(#glowGrad)"/>
+
+  <!-- Safe zone content (80% center = 102px padding each side) -->
+  <!-- Decorative ring -->
+  <circle cx="256" cy="256" r="200" fill="none"
+          stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <circle cx="256" cy="256" r="170" fill="none"
+          stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- JV letters centered -->
+  <text x="100" y="316"
+        font-family="'Arial Black', 'Helvetica Neue', sans-serif"
+        font-weight="900"
+        font-size="220"
+        fill="url(#textGrad)"
+        letter-spacing="-6">J</text>
+  <text x="246" y="316"
+        font-family="'Arial Black', 'Helvetica Neue', sans-serif"
+        font-weight="900"
+        font-size="220"
+        fill="url(#textGrad)"
+        letter-spacing="-6">V</text>
+
+  <!-- Dot -->
+  <circle cx="420" cy="288" r="24" fill="url(#dotGrad)"/>
+  <circle cx="420" cy="288" r="14" fill="rgba(255,255,255,0.9)"/>
+
+  <!-- Label pill -->
+  <rect x="130" y="344" width="252" height="52" rx="26" ry="26"
+        fill="rgba(0,0,0,0.2)"/>
+  <text x="256" y="379"
+        font-family="'Arial', sans-serif"
+        font-weight="700"
+        font-size="24"
+        fill="rgba(255,255,255,0.9)"
+        text-anchor="middle"
+        letter-spacing="5">JVOR DEV</text>
+</svg>

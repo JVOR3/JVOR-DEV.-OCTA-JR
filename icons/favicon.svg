@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ff6b1a"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="32" height="32" rx="7" ry="7" fill="url(#bg)"/>
+  <text x="3" y="24"
+        font-family="'Arial Black', sans-serif"
+        font-weight="900"
+        font-size="20"
+        fill="white"
+        letter-spacing="-1">JV</text>
+  <circle cx="28" cy="10" r="3.5" fill="rgba(255,255,255,0.9)"/>
+</svg>

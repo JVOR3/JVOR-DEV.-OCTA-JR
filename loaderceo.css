@@ -1,0 +1,256 @@
+/* ═══════════════════════════════════════════════════════════
+   LOADER-SEO.CSS — JVOR DEV PORTFOLIO
+   Premium Loading Screen Redesign
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Reset old loader styles ── */
+#page-loader {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999999 !important;
+  background: #080808 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.8s ease !important;
+  overflow: hidden !important;
+}
+
+#page-loader.loader-done {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* ── Particle canvas behind everything ── */
+#loader-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+}
+
+/* ── Inner container ── */
+.loader-inner {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+  text-align: center !important;
+}
+
+/* ── Animated ring ── */
+.loader-ring-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 2rem;
+}
+
+.loader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.loader-ring--outer {
+  border-top-color: #ea580c;
+  border-right-color: rgba(234, 88, 12, 0.3);
+  animation: loaderSpin 1.2s linear infinite;
+}
+
+.loader-ring--mid {
+  inset: 10px;
+  border-bottom-color: #ff9f1c;
+  border-left-color: rgba(255, 159, 28, 0.2);
+  animation: loaderSpin 1.8s linear infinite reverse;
+}
+
+.loader-ring--inner {
+  inset: 22px;
+  border-top-color: rgba(234, 88, 12, 0.5);
+  animation: loaderSpin 2.4s linear infinite;
+}
+
+/* Center logo inside ring */
+.loader-ring-logo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.loader-ring-logo span {
+  color: #ea580c;
+}
+
+@keyframes loaderSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Brand name ── */
+.loader-brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  animation: loaderFadeUp 0.6s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.loader-brand span {
+  color: #ea580c;
+  text-shadow: 0 0 30px rgba(234, 88, 12, 0.6);
+}
+
+/* ── Tagline ── */
+.loader-tagline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  animation: loaderFadeUp 0.6s ease forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+
+/* ── Progress bar ── */
+.loader-progress-wrap {
+  width: min(280px, 70vw);
+  animation: loaderFadeUp 0.6s ease forwards;
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+
+.loader-progress-track {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.loader-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ea580c, #ff9f1c, #ea580c);
+  background-size: 200% 100%;
+  border-radius: 99px;
+  box-shadow: 0 0 12px rgba(234, 88, 12, 0.7);
+  animation:
+    loaderBarFill 2s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    loaderBarShimmer 1.5s linear infinite;
+  animation-delay: 0.3s, 0s;
+}
+
+@keyframes loaderBarFill {
+  0%   { width: 0%; }
+  60%  { width: 75%; }
+  85%  { width: 92%; }
+  100% { width: 100%; }
+}
+
+@keyframes loaderBarShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Counter + status ── */
+.loader-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.loader-percent {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ea580c;
+  letter-spacing: 1px;
+  min-width: 36px;
+}
+
+.loader-status-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Orange glow orb in background ── */
+.loader-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  animation: loaderGlowPulse 3s ease-in-out infinite;
+}
+
+@keyframes loaderGlowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%       { transform: scale(1.2); opacity: 1; }
+}
+
+/* ── Corner accents ── */
+.loader-corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0.25;
+}
+
+.loader-corner--tl {
+  top: 24px; left: 24px;
+  border-top: 2px solid #ea580c;
+  border-left: 2px solid #ea580c;
+}
+
+.loader-corner--tr {
+  top: 24px; right: 24px;
+  border-top: 2px solid #ea580c;
+  border-right: 2px solid #ea580c;
+}
+
+.loader-corner--bl {
+  bottom: 24px; left: 24px;
+  border-bottom: 2px solid #ea580c;
+  border-left: 2px solid #ea580c;
+}
+
+.loader-corner--br {
+  bottom: 24px; right: 24px;
+  border-bottom: 2px solid #ea580c;
+  border-right: 2px solid #ea580c;
+}
+
+/* ── Shared fade-up animation ── */
+@keyframes loaderFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
