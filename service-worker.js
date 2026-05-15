@@ -3,7 +3,7 @@
    Offline support: caches all portfolio assets on install.
    ═══════════════════════════════════════════════════════════════════ */
 
-const CACHE_NAME = 'jvor-portfolio-v1';
+const CACHE_NAME = 'jvor-portfolio-v2';
 
 // Assets to cache on install — covers all your CSS/JS/images
 const PRECACHE_URLS = [
@@ -34,6 +34,22 @@ const PRECACHE_URLS = [
   '/imgae/01.jpg',
   // Offline fallback page
   '/offline.html',
+  // PWA Icons — required for install prompt & home screen
+  '/manifest.json',
+  '/icons/favicon.svg',
+  '/icons/icon-32x32.png',
+  '/icons/icon-48x48.png',
+  '/icons/icon-72x72.png',
+  '/icons/icon-96x96.png',
+  '/icons/icon-128x128.png',
+  '/icons/icon-144x144.png',
+  '/icons/icon-152x152.png',
+  '/icons/icon-167x167.png',
+  '/icons/icon-180x180.png',
+  '/icons/icon-192x192.png',
+  '/icons/icon-384x384.png',
+  '/icons/icon-512x512.png',
+  '/icons/icon-maskable-512x512.png',
 ];
 
 /* ── INSTALL: pre-cache ── */

@@ -30,11 +30,12 @@
 <link rel="stylesheet" href="upgrade-4-ai-contact.css">
 <link rel="stylesheet" href="upgrade-5-estimator.css">
 <link rel="stylesheet" href="upgrade-6-book-call.css">
-```
-
 
   <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="icons/icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180x180.png">
   <link rel="shortcut icon" href="icons/icon-32x32.png" type="image/png">
 
 
@@ -3973,49 +3974,48 @@
       }
 
       /* ══════════════════════════════════════════════
-         LOAD REVIEWS FROM FIREBASE (real-time)
-      ══════════════════════════════════════════════ */
-      const grid = document.getElementById('tv4Grid');
-
-      /* ══════════════════════════════════════════════
          REAL-TIME SYNC — adds new cards, removes deleted ones
-         Every time Firebase data changes, we diff the DOM
-         against the live snapshot and reconcile.
+         Wrapped in DOMContentLoaded so grid is never null.
+         Every time Firebase data changes (including deletes),
+         we diff the DOM against the live snapshot and reconcile.
       ══════════════════════════════════════════════ */
-      onValue(query(reviewsRef, orderByChild('timestamp')), (snapshot) => {
-        const data = snapshot.val() || {};
+      window.addEventListener('DOMContentLoaded', () => {
+        const grid = document.getElementById('tv4Grid');
+        if (!grid) return; // safety guard
 
-        // --- 1. REMOVE cards whose key no longer exists in Firebase ---
-        document.querySelectorAll('.tv4-card[data-fb-key]').forEach(card => {
-          const key = card.dataset.fbKey;
-          if (!data[key]) {
-            // Animate out then remove
-            card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(-16px) scale(0.96)';
-            setTimeout(() => card.remove(), 380);
-          }
-        });
+        onValue(query(reviewsRef, orderByChild('timestamp')), (snapshot) => {
+          const data = snapshot.val() || {};
 
-        // --- 2. ADD cards that are in Firebase but not yet in the DOM ---
-        const entries = Object.entries(data)
-          .map(([key, val]) => ({ key, ...val }))
-          .sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+          // --- 1. REMOVE cards whose key no longer exists in Firebase ---
+          document.querySelectorAll('.tv4-card[data-fb-key]').forEach(card => {
+            const key = card.dataset.fbKey;
+            if (!data[key]) {
+              card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(-16px) scale(0.96)';
+              setTimeout(() => card.remove(), 380);
+            }
+          });
 
-        let delay = 0;
-        entries.forEach(entry => {
-          // Already rendered? Skip.
-          if (document.querySelector(`.tv4-card[data-fb-key="${entry.key}"]`)) return;
+          // --- 2. ADD cards that are in Firebase but not yet in the DOM ---
+          const entries = Object.entries(data)
+            .map(([key, val]) => ({ key, ...val }))
+            .sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
 
-          const card = document.createElement('div');
-          card.className = 'tv4-card';
-          card.dataset.category = entry.category || 'other';
-          card.dataset.fbKey = entry.key;
-          card.innerHTML = buildCardHTML(entry);
+          let delay = 0;
+          entries.forEach(entry => {
+            if (document.querySelector(`.tv4-card[data-fb-key="${entry.key}"]`)) return;
 
-          grid.insertBefore(card, grid.firstChild);
-          animateCardIn(card, delay);
-          delay += 80;
+            const card = document.createElement('div');
+            card.className = 'tv4-card';
+            card.dataset.category = entry.category || 'other';
+            card.dataset.fbKey = entry.key;
+            card.innerHTML = buildCardHTML(entry);
+
+            grid.insertBefore(card, grid.firstChild);
+            animateCardIn(card, delay);
+            delay += 80;
+          });
         });
       });
 
