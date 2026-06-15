@@ -2501,65 +2501,68 @@
     </div>
 
     <!-- ── VIDEO EDITS TAB ── -->
-    <div class="cs-tab-content" id="cs-tab-video">
-      <div class="cs-grid">
+    <!-- ── VIDEO EDITS TAB ── -->
+<div class="cs-tab-content" id="cs-tab-video">
+  <div class="cs-grid">
 
-        <!-- Video card 1 — replace with your actual video embed or thumbnail -->
-        <div class="cs-card cs-card-video" data-cs-index="0" data-cs-type="video">
-          <div class="cs-card-img-wrap cs-video-wrap">
-            <!-- Option A: YouTube embed — replace VIDEO_ID -->
-            <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen class="cs-video-iframe"></iframe> -->
-            <!-- Option B: Thumbnail with play button (default) -->
-            <img src="imgae/01.jpg" alt="Video Edit Sample 1" class="cs-card-img">
-            <div class="cs-play-btn"><i class='bx bx-play-circle'></i></div>
-            <div class="cs-card-badge cs-badge-video"><i class='bx bx-video'></i> Video</div>
-          </div>
-          <div class="cs-card-body">
-            <h4 class="cs-card-title">Promo Video Edit</h4>
-            <p class="cs-card-desc">Short-form promotional reel with smooth cuts, color grading, and motion effects.</p>
-            <div class="cs-card-tools">
-              <span><i class='bx bx-video'></i> CapCut</span>
-              <span><i class='bx bx-film'></i> Premiere Pro</span>
-            </div>
-          </div>
+    <!-- Video card 1 -->
+    <div class="cs-card cs-card-video" data-cs-index="0" data-cs-type="video">
+      <div class="cs-card-img-wrap cs-video-wrap" id="vcWrap0" onclick="playVid(0)" style="cursor:pointer;">
+        <img src="imgae/GRAPHICS DESIGN/COFFE GRAPHICS DESIGN JVOR.png"
+             alt="Promo Video thumbnail" class="cs-card-img">
+        <div class="cs-card-overlay"></div>
+        <div class="cs-play-btn"><i class='bx bx-play-circle'></i></div>
+        <div class="cs-card-badge cs-badge-video"><i class='bx bx-video'></i> Video</div>
+        <video id="vcVid0" style="display:none;position:absolute;inset:0;width:100%;height:100%;border:none;" controls preload="none">
+          <source src="A-vedios/lv_7553907354752847157_20260604125115.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="cs-card-body">
+        <h4 class="cs-card-title">Promo Video Edit</h4>
+        <p class="cs-card-desc">Short-form promotional reel with smooth cuts, color grading, and motion effects.</p>
+        <div class="cs-card-tools">
+          <span><i class='bx bx-video'></i> CapCut</span>
+          <span><i class='bx bx-film'></i> Premiere Pro</span>
         </div>
-
-        <!-- Video card 2 -->
-        <div class="cs-card cs-card-video" data-cs-index="1" data-cs-type="video">
-          <div class="cs-card-img-wrap cs-video-wrap">
-            <img src="imgae/02.jpg" alt="Video Edit Sample 2" class="cs-card-img">
-            <div class="cs-play-btn"><i class='bx bx-play-circle'></i></div>
-            <div class="cs-card-badge cs-badge-video"><i class='bx bx-video'></i> Video</div>
-          </div>
-          <div class="cs-card-body">
-            <h4 class="cs-card-title">Cinematic Reel</h4>
-            <p class="cs-card-desc">Cinematic edit with mood-driven color grading and dynamic transitions.</p>
-            <div class="cs-card-tools">
-              <span><i class='bx bx-video'></i> CapCut</span>
-              <span><i class='bx bx-film'></i> DaVinci</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Video placeholder -->
-        <div class="cs-card cs-card-add">
-          <div class="cs-card-img-wrap cs-add-placeholder">
-            <div class="cs-add-inner">
-              <i class='bx bx-plus-circle'></i>
-              <span>Add Your Video</span>
-            </div>
-          </div>
-          <div class="cs-card-body">
-            <h4 class="cs-card-title">Your Next Video Edit</h4>
-            <p class="cs-card-desc">Replace with a YouTube embed or thumbnail from your video projects.</p>
-            <div class="cs-card-tools">
-              <span><i class='bx bx-video'></i> Your Tool</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
+
+    <!-- Video card 2 — placeholder (wala pang 2nd video) -->
+    <div class="cs-card cs-card-add">
+      <div class="cs-card-img-wrap cs-add-placeholder">
+        <div class="cs-add-inner">
+          <i class='bx bx-plus-circle'></i>
+          <span>Add Your Video</span>
+        </div>
+      </div>
+      <div class="cs-card-body">
+        <h4 class="cs-card-title">Coming Soon</h4>
+        <p class="cs-card-desc">More video edits will be added soon.</p>
+        <div class="cs-card-tools">
+          <span><i class='bx bx-video'></i> CapCut</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video card 3 — placeholder -->
+    <div class="cs-card cs-card-add">
+      <div class="cs-card-img-wrap cs-add-placeholder">
+        <div class="cs-add-inner">
+          <i class='bx bx-plus-circle'></i>
+          <span>Add Your Video</span>
+        </div>
+      </div>
+      <div class="cs-card-body">
+        <h4 class="cs-card-title">Your Next Video Edit</h4>
+        <p class="cs-card-desc">Replace with your next video project.</p>
+        <div class="cs-card-tools">
+          <span><i class='bx bx-video'></i> Your Tool</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <!-- CTA -->
     <div class="cs-cta">

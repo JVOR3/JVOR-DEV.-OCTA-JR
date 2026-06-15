@@ -301,7 +301,7 @@ const db = getFirestore(app);
     let hash = 0;
     for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
     const hue = Math.abs(hash) % 360;
-    const canvas = document.createElement("canvas");
+    const canvas = document.createElement("canvas");  
     canvas.width = canvas.height = 80;
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = `hsl(${hue}, 55%, 45%)`;
@@ -5932,3 +5932,18 @@ console.log('  ✅ All sections visible');
   }); // end ready
 
 })();
+
+
+
+
+function playVid(i) {
+  const wrap = document.getElementById('vcWrap' + i);
+  const vid  = document.getElementById('vcVid' + i);
+  wrap.querySelector('.cs-card-img').style.display = 'none';
+  wrap.querySelector('.cs-play-btn').style.display = 'none';
+  wrap.querySelector('.cs-card-overlay').style.display = 'none';
+  vid.style.display = 'block';
+  wrap.style.cursor = 'default';
+  wrap.onclick = null;
+  vid.play();
+}
