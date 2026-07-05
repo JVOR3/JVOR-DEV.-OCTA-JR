@@ -1625,3 +1625,155 @@ body.light-mode .pgx-counter-bar {
     right: .5rem;
   }
 }
+
+/* ════════════ CREATIVE LIGHTBOX FIX — no black flash ════════ */
+/* Give the container a dark bg so it never shows white/black
+   while the image is loading */
+.cs-lb-container {
+  background: #111 !important;
+}
+
+/* The image starts invisible and fades in via JS once loaded */
+#csLightboxImg {
+  opacity: 0;
+  background: #111;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+/* ── Video modal: ensure sound works (no browser mute override) */
+#csModalVideo {
+  /* Never auto-mute */
+  volume: 1;
+}
+
+/* Spinner shown while video loads */
+.cs-vid-modal-box::before {
+  content: '';
+  display: none;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CREATIVE SECTION — DESIGN UPGRADE
+   Improved card sizing, professional video UI, premium header
+══════════════════════════════════════════════════════════════ */
+
+/* ── Better grid sizing — not too big, not too cramped ── */
+.cs-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.6rem;
+}
+
+.cs-grid-video {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* ── Card proportions ── */
+.cs-card-img-wrap {
+  aspect-ratio: 4 / 3;
+}
+
+/* ── Card body improvements ── */
+.cs-card-body {
+  padding: 1.1rem 1.3rem 1.4rem;
+}
+
+.cs-card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.35rem;
+  color: var(--text-color);
+}
+
+.cs-card-desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Card hover: slightly sharper glow ── */
+.cs-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(223, 137, 8, 0.4);
+  box-shadow: 0 12px 36px rgba(223, 137, 8, 0.18), 0 0 0 1px rgba(223,137,8,0.08);
+}
+
+/* ── Video card: proper fixed height for thumbnail ── */
+.cs-video-wrap {
+  min-height: 0 !important;
+}
+
+/* ── Card badge: clean pill ── */
+.cs-card-badge {
+  font-size: 0.68rem;
+  padding: 0.28rem 0.75rem;
+  letter-spacing: 0.8px;
+}
+
+/* ── Tools chips ── */
+.cs-card-tools span {
+  font-size: 0.72rem;
+  padding: 0.22rem 0.65rem;
+}
+
+/* ── Section background: slightly richer ── */
+.creative-samples {
+  padding: 7rem 6% 5.5rem;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(12,8,25,1) 0%, var(--bg-color) 100%);
+}
+
+/* ── Eyebrow / header section: add subtle top glow ── */
+.cs-section-header::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(223,137,8,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Tab switcher: tighter on small screen ── */
+@media (max-width: 480px) {
+  .cs-tabs {
+    flex-direction: column;
+    border-radius: 20px;
+    width: 90%;
+  }
+  .cs-tab-btn {
+    justify-content: center;
+    padding: 0.85rem 1.2rem;
+  }
+  .cs-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .cs-card-body {
+    padding: 0.8rem 0.9rem 1rem;
+  }
+  .cs-card-title { font-size: 0.82rem; }
+  .cs-card-desc  { display: none; }
+}
+
+/* ── "Watch Full Video" button: now outlined ghost → filled on hover ── */
+.cs-vid-fullbtn {
+  background: rgba(223,137,8,0.08);
+  color: #DF8908;
+  border: 1.5px solid rgba(223,137,8,0.28);
+  box-shadow: none;
+}
+.cs-vid-fullbtn:hover {
+  background: linear-gradient(135deg, #DF8908, #FF1D15);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(234,88,12,0.45);
+}

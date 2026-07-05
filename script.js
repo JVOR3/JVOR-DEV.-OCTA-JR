@@ -3527,11 +3527,27 @@ console.log('💳 Premium Digital ID Card v2 + Bento Grid — loaded!');
 
   // Open on graphic card click (non-placeholder, non-video)
   document.addEventListener('click', function (e) {
-    const card = e.target.closest('.cs-card:not(.cs-card-add):not(.cs-card-video)');
+    // Ignore clicks on video cards, add cards, or buttons inside cards
+    if (e.target.closest('.cs-card-video')) return;
+    if (e.target.closest('.cs-vid-fullbtn')) return;
+    if (e.target.closest('.cs-card-add')) return;
+    if (e.target.closest('#csVideoModal')) return;
+
+    const card = e.target.closest('.cs-card');
     if (!card) return;
+    if (card.classList.contains('cs-card-add')) return;
+    if (card.classList.contains('cs-card-video')) return;
+
     buildImageList();
-    const idx = parseInt(card.dataset.csIndex, 10) || 0;
-    openLightbox(Math.min(idx, csImages.length - 1));
+    if (csImages.length === 0) return;
+
+    // Find the clicked card's actual position in the image list
+    const allGraphicCards = Array.from(
+      document.querySelectorAll('#cs-tab-graphic .cs-card:not(.cs-card-add)')
+    );
+    const clickedPos = allGraphicCards.indexOf(card);
+    const safeIdx = clickedPos >= 0 ? Math.min(clickedPos, csImages.length - 1) : 0;
+    openLightbox(safeIdx);
   });
 
   if (lbClose) lbClose.addEventListener('click', closeLightbox);
@@ -5936,14 +5952,48 @@ console.log('  ✅ All sections visible');
 
 
 
-function playVid(i) {
-  const wrap = document.getElementById('vcWrap' + i);
-  const vid  = document.getElementById('vcVid' + i);
-  wrap.querySelector('.cs-card-img').style.display = 'none';
-  wrap.querySelector('.cs-play-btn').style.display = 'none';
-  wrap.querySelector('.cs-card-overlay').style.display = 'none';
-  vid.style.display = 'block';
-  wrap.style.cursor = 'default';
-  wrap.onclick = null;
-  vid.play();
+/* ── Video Player Functions ─────────────────────────────── */
+function fullPlayVid(i) {
+  const modal = document.getElementById('csVideoModal');
+  const modalVid = document.getElementById('csModalVideo');
+  const modalSrc = document.getElementById('csModalVideoSrc');
+  if (!modal || !modalVid || !modalSrc) return;
+
+  // Get src from the hidden inline video element
+  const inlineVid = document.getElementById('vcVid' + i);
+  const sourceEl = inlineVid ? inlineVid.querySelector('source') : null;
+  // Use getAttribute to get the raw relative path, not the absolute URL
+  const rawSrc = sourceEl ? sourceEl.getAttribute('src') : '';
+  if (!rawSrc) return;
+
+  // Set source and reload
+  modalSrc.setAttribute('src', rawSrc);
+  modalVid.load();
+
+  // Show modal
+  modal.classList.add('cs-vid-modal-open');
+  document.body.style.overflow = 'hidden';
+
+  // Try autoplay (may be blocked by browser policy — user can press play)
+  modalVid.play().catch(function() {});
 }
+
+function closeVidModal() {
+  const modal = document.getElementById('csVideoModal');
+  const modalVid = document.getElementById('csModalVideo');
+  if (!modal) return;
+  if (modalVid) {
+    modalVid.pause();
+    modalVid.currentTime = 0;
+  }
+  modal.classList.remove('cs-vid-modal-open');
+  document.body.style.overflow = '';
+}
+
+// Escape key closes video modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeVidModal();
+});
+
+// Legacy alias
+function playVid(i) { fullPlayVid(i); }

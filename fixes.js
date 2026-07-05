@@ -415,6 +415,8 @@
     function next() { current = (current + 1) % IMAGES.length; loadImage(current); }
 
     lbClose.addEventListener('click', closeLb);
+    const lbBack = document.getElementById('pgxLbBack');
+    lbBack && lbBack.addEventListener('click', closeLb);
     document.querySelector('.pgx-lb-backdrop') &&
       document.querySelector('.pgx-lb-backdrop').addEventListener('click', closeLb);
     lbPrev.addEventListener('click', e => { e.stopPropagation(); prev(); });
